@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Windows.Forms;
 
@@ -15,6 +16,8 @@ namespace flac_player_form
         bool shuffle = false;
         bool repeat = false;
         bool albumCoverVisible = false;
+        bool trackInfoVisible = true;
+        bool playlistVisible = false;
         int currentTrack = 0;
         public main()
         {
@@ -30,134 +33,124 @@ namespace flac_player_form
 
         private void getAttributes()
         {
-            if (repeat == true)
+            trackName.Text = "";
+            artistValue.Text = "";
+            var file = TagLib.File.Create(playlist[currentTrack]);
+            string title = file.Tag.Title;
+            string album = file.Tag.Album;
+            string year = "";
+            string artist = "";
+            string seconds_display = "";
+            //Add 0 to seconds if less than 10
+            if (file.Properties.Duration.Seconds <= 9)
             {
-
+                seconds_display = "0" + file.Properties.Duration.Seconds.ToString();
             }
             else
             {
-                trackName.Text = "";
-                artistValue.Text = "";
-                var file = TagLib.File.Create(playlist[currentTrack]);
-                string title = file.Tag.Title;
-                string album = file.Tag.Album;
-                string year = "";
-                string artist = "";
-                string seconds_display = "";
-                //add 0 to seconds if less than 10
-                if (file.Properties.Duration.Seconds <= 9)
+                seconds_display = file.Properties.Duration.Seconds.ToString();
+            }
+            //Check if tags exist, if not replace tags with unknown
+            //Title
+            if (String.IsNullOrWhiteSpace(title))
+            {
+                title = Path.GetFileNameWithoutExtension(file.Name);
+            }
+            else
+            {
+                if (title.Length > 25)
                 {
-                    seconds_display = "0" + file.Properties.Duration.Seconds.ToString();
+                    title = title.Substring(0, 25) + "...";
                 }
-                else
+            }
+            //Current Track
+            trackName.Text = title + " by ";
+            //Album
+            if (String.IsNullOrWhiteSpace(file.Tag.Album))
+            {
+                album = "Unknown";
+            }
+            else if (album.Length > 25)
+            {
+                album = album.Substring(0, 25) + "...";
+            }
+            //Year
+            if (file.Tag.Year == 0)
+            {
+                year = "Unknown";
+            }
+            else
+            {
+                year = file.Tag.Year.ToString();
+            }
+            //Artist
+            try
+            {
+                artist = file.Tag.Performers[0];
+                //Is the name too long?
+                if (artist.Length > 25)
                 {
-                    seconds_display = file.Properties.Duration.Seconds.ToString();
+                    artist = artist.Substring(0, 25) + "...";
                 }
-                //Check if tags exist, if not replace tags with unknown
-                //Title
-                if (String.IsNullOrWhiteSpace(title))
-                {
-                    title = Path.GetFileNameWithoutExtension(file.Name);
-                    //Current Track
-                    trackName.Text = title + " by ";
-                }
-                else 
-                {
-                    if (title.Length > 25)
-                    {
-                        title = title.Substring(0, 25) + "...";
-                    }
-                    //Current Track
-                    trackName.Text = title + " by ";
-                }
-                //Albumsssssssssssssssssssssssssssssssssssssssss
-                if (String.IsNullOrWhiteSpace(file.Tag.Album))
-                {
-                    album = "Unknown";
-                }
-                else if (album.Length > 25)
-                {
-                    album = album.Substring(0, 25) + "...";
-                }
-                //Year
-                if (file.Tag.Year == 0)
-                {
-                    year = "Unknown";
-                }
-                else
-                {
-                    year = file.Tag.Year.ToString();
-                }
-                //Artist
-                try
-                {
-                    artist = file.Tag.Performers[0];
-                    //Current Track
-                    trackName.Text = trackName.Text + artist;
-                    //Is the name too long?
-                    if (artist.Length > 25)
-                    {
-                        artist = artist.Substring(0, 25) + "...";
-                        //Current Track
-                        trackName.Text = trackName.Text + artist;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    artist = "Unknown";
-                    //Current Track
-                    trackName.Text = trackName.Text + artist;
-                }
-
-                //Update track info labels
-                artistValue.Text = artist;
-                titleValue.Text = title;
-                albumValue.Text = album;
-                yearValue.Text = year;
-                lengthValue.Text = file.Properties.Duration.Minutes.ToString() + ":" + seconds_display;
-                bitrateValue.Text = file.Properties.AudioBitrate.ToString() + " kbps";
-
-                //Set bitrate label color
-                if (file.Properties.AudioBitrate <= 196)
-                {
-                    bitrateValue.BackColor = Color.OrangeRed;
-                }
-                else if (file.Properties.AudioBitrate <= 320 && file.Properties.AudioBitrate > 196)
-                {
-                    bitrateValue.BackColor = Color.Green;
-                }
-                else if (file.Properties.AudioBitrate <= 1000 && file.Properties.AudioBitrate > 320)
-                {
-                    bitrateValue.BackColor = Color.FromArgb(22, 147, 173);
-                }
-                else if (file.Properties.AudioBitrate <= 1411 && file.Properties.AudioBitrate > 1000)
-                {
-                    bitrateValue.BackColor = Color.Purple;
-                }
-                else if (file.Properties.AudioBitrate <= 99999 && file.Properties.AudioBitrate > 1411)
-                {
-                    bitrateValue.BackColor = Color.Gold;
-                }
-
-                //Get cover
-                //try to set the cover
-                try
-                {
-                    TagLib.IPicture cover = file.Tag.Pictures[0];
-                    MemoryStream ms = new MemoryStream(cover.Data.Data);
-                    ms.Seek(0, SeekOrigin.Begin);
-                    albumCover.BackgroundImage = System.Drawing.Image.FromStream(ms);
-                }
-                catch (Exception ex)
-                {
-                    toggleAlbumCover.BackgroundImage = System.Drawing.Image.FromFile(@"assets\up.png");
-                    albumCoverVisible = false;
-                    albumCover.Hide();
-                }
-
+                //Current Track
+                trackName.Text = trackName.Text + artist;
 
             }
+            catch (Exception ex)
+            {
+                artist = "Unknown";
+                //Current Track
+                trackName.Text = trackName.Text + artist;
+            }
+
+            //Update track info labels
+            artistValue.Text = artist;
+            titleValue.Text = title;
+            albumValue.Text = album;
+            yearValue.Text = year;
+            lengthValue.Text = file.Properties.Duration.Minutes.ToString() + ":" + seconds_display;
+            bitrateValue.Text = file.Properties.AudioBitrate.ToString() + " kbps";
+
+            //Set bitrate label color
+            if (file.Properties.AudioBitrate <= 196)
+            {
+                bitrateValue.BackColor = Color.OrangeRed;
+            }
+            else if (file.Properties.AudioBitrate <= 320 && file.Properties.AudioBitrate > 196)
+            {
+                bitrateValue.BackColor = Color.Green;
+            }
+            else if (file.Properties.AudioBitrate <= 1000 && file.Properties.AudioBitrate > 320)
+            {
+                bitrateValue.BackColor = Color.FromArgb(22, 147, 173);
+            }
+            else if (file.Properties.AudioBitrate <= 1411 && file.Properties.AudioBitrate > 1000)
+            {
+                bitrateValue.BackColor = Color.Purple;
+            }
+            else if (file.Properties.AudioBitrate <= 99999 && file.Properties.AudioBitrate > 1411)
+            {
+                bitrateValue.BackColor = Color.Gold;
+            }
+
+            //Get cover
+            //try to set the cover
+            try
+            {
+                TagLib.IPicture cover = file.Tag.Pictures[0];
+                MemoryStream ms = new MemoryStream(cover.Data.Data);
+                ms.Seek(0, SeekOrigin.Begin);
+                albumCover.BackgroundImage = System.Drawing.Image.FromStream(ms);
+            }
+            catch (Exception ex)
+            {
+                toggleAlbumCover.BackgroundImage = System.Drawing.Image.FromFile(@"assets\up.png");
+                albumCoverVisible = false;
+                albumCover.Hide();
+            }
+
+
+
         }
         private void play()
         {
@@ -216,6 +209,7 @@ namespace flac_player_form
                         nextTrack = rndTrack.Next(0, playlist.Count);
                     }
                     currentTrack = nextTrack;
+                    playlistList.SelectedIndex = currentTrack;
                     play();
                 }
                 else
@@ -230,20 +224,25 @@ namespace flac_player_form
                         currentTrack = 0;
                     }
                 }
-
+                playlistList.SelectedIndex = currentTrack;
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Initialization process
+            playlistList.CustomTabOffsets.Add(100);
+            playlistList.UseCustomTabOffsets = true;
             libVLC = new LibVLC();
             mp = new MediaPlayer(libVLC);
             backgroundCredits.BackColor = System.Drawing.Color.Transparent;
             //Menu alignment
             trackInfoMenu.Location = new System.Drawing.Point(0, 590);
+            playlistMenu.Location = new System.Drawing.Point(0, 555);
+            playlistPanel.Location = new System.Drawing.Point(36, 163);
             //Hide/show panels
-            trackInfoMenu.Hide();
             albumCover.Hide();
+            playlistPanel.Hide();
             //Tooltips
             controlsTooltip.SetToolTip(playButton, "Play/pause");
             controlsTooltip.SetToolTip(nextTrack, "Next track");
@@ -292,15 +291,59 @@ namespace flac_player_form
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             playlist.Clear();
+            playlistList.Items.Clear();
             currentTrack = 0;
+            int trackIndex = 0;
             foreach (string file in openSongs.FileNames)
             {
                 playlist.Add(file);
+                //Get attributes to name item on playlist
+                var track = TagLib.File.Create(playlist[trackIndex]);
+                string trackTitle = track.Tag.Title;
+                string trackArtist;
+                string seconds_display;
+                string playlistItemName = "";
+                //Add 0 to seconds if less than 10
+                if (track.Properties.Duration.Seconds <= 9)
+                {
+                    seconds_display = "0" + track.Properties.Duration.Seconds.ToString();
+                }
+                else
+                {
+                    seconds_display = track.Properties.Duration.Seconds.ToString();
+                }
+                //Check if tags exist, if not replace tags with unknown
+                //Title
+                if (String.IsNullOrWhiteSpace(trackTitle))
+                {
+                    trackTitle = Path.GetFileNameWithoutExtension(track.Name);
+                }
+                else
+                {
+                    trackTitle = track.Tag.Title.ToString();
+                }
+                //Artist
+                try
+                {
+                    trackArtist = track.Tag.Performers[0];
+
+                }
+                catch (Exception ex)
+                {
+                    trackArtist = "Unknown";
+                }
+                //Update track info labels
+                lengthValue.Text = track.Properties.Duration.Minutes.ToString() + ":" + seconds_display;
+                playlistItemName = trackArtist + " — " + trackTitle;
+                playlistList.Items.Add(playlistItemName);
+                trackIndex++;
             }
+            trackIndex = 0;
+            playlistList.SelectedIndex = 0;
             //PLAY
             play();
             //Get cover
-            //try to set the cover
+            //Try to set the cover
             var f = TagLib.File.Create(playlist[currentTrack]);
             try
             {
@@ -310,7 +353,9 @@ namespace flac_player_form
                 albumCover.BackgroundImage = System.Drawing.Image.FromStream(ms);
                 toggleAlbumCover.BackgroundImage = System.Drawing.Image.FromFile(@"assets\down.png");
                 albumCover.Show();
+                trackInfo.Show();
                 albumCoverVisible = true;
+                trackInfoVisible = true;
             }
             catch (Exception ex)
             {
@@ -318,11 +363,23 @@ namespace flac_player_form
                 albumCoverVisible = false;
                 albumCover.Hide();
             }
+            //Get other attributes
+            getAttributes();
         }
 
         private void nextTrack_Click(object sender, EventArgs e)
         {
-            if (currentTrack < playlist.Count - 1)
+            if (shuffle == true)
+            {
+                Random rndTrack = new Random();
+                int nextTrack = rndTrack.Next(0, playlist.Count);
+                while (nextTrack == currentTrack)
+                {
+                    nextTrack = rndTrack.Next(0, playlist.Count);
+                }
+                currentTrack = nextTrack;
+            }
+            else if (currentTrack < playlist.Count - 1)
             {
                 currentTrack++;
             }
@@ -330,8 +387,7 @@ namespace flac_player_form
             {
                 currentTrack = 0;
             }
-            play();
-
+            playlistList.SelectedIndex = currentTrack;
         }
 
         private void previousTrack_Click(object sender, EventArgs e)
@@ -344,8 +400,7 @@ namespace flac_player_form
             {
                 currentTrack = playlist.Count - 1;
             }
-            play();
-
+            playlistList.SelectedIndex = currentTrack;
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -387,12 +442,6 @@ namespace flac_player_form
         {
             System.Diagnostics.Process.Start("https://pixel-city.tumblr.com/post/143713704161/late-vibes");
         }
-        private void toggleInfoPanel_Click(object sender, EventArgs e)
-        {
-            trackInfo.Hide();
-            albumCover.Hide();
-            trackInfoMenu.Show();
-        }
 
         private void toggleAlbumCover_Click_1(object sender, EventArgs e)
         {
@@ -412,17 +461,27 @@ namespace flac_player_form
 
         private void trackInfoMenu_Click(object sender, EventArgs e)
         {
-            trackInfo.Show();
-            trackInfoMenu.Hide();
-            if (albumCoverVisible == false)
+            playlistPanel.Hide();
+            playlistVisible = false;
+            if (trackInfoVisible == false)
             {
+                trackInfoVisible = true;
+                trackInfo.Show();
+                if (albumCoverVisible == false)
+                {
+                    albumCover.Hide();
+                }
+                else if (albumCoverVisible == true)
+                {
+                    albumCover.Show();
+                }
+            }
+            else if (trackInfoVisible == true)
+            {
+                trackInfoVisible = false;
+                trackInfo.Hide();
                 albumCover.Hide();
             }
-            else
-            {
-                albumCover.Show();
-            }
-
         }
 
         private void volumeSlider_ValueChanged(object sender, EventArgs e)
@@ -455,6 +514,43 @@ namespace flac_player_form
                 volumeSlider.Value = 30;
             }
 
+        }
+
+        private void playlistMenu_Click(object sender, EventArgs e)
+        {
+            trackInfoVisible = false;
+            trackInfo.Hide();
+            albumCover.Hide();
+            if (playlistVisible == false)
+            {
+                playlistVisible = true;
+                playlistPanel.Show();
+            } else if (playlistVisible == true)
+            {
+                playlistVisible = false;
+                playlistPanel.Hide();
+            }
+        }
+        private void playlistList_DrawItem_1(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                e = new DrawItemEventArgs(e.Graphics,
+                                          e.Font,
+                                          e.Bounds,
+                                          e.Index,
+                                          e.State ^ DrawItemState.Selected,
+                                          Color.Black,
+                                          Color.FromArgb(22, 147, 173));//Accent color
+            e.DrawBackground();
+            e.Graphics.DrawString(playlistList.Items[e.Index].ToString(), e.Font, Brushes.White, e.Bounds, StringFormat.GenericDefault);
+            e.DrawFocusRectangle();
+        }
+
+        private void playlistList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            currentTrack = playlistList.SelectedIndex;
+            play();
         }
     }
 
