@@ -76,6 +76,7 @@
             this.volumeIcon = new System.Windows.Forms.PictureBox();
             this.volumeTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.controlsTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -192,7 +193,7 @@
             this.durationNow.Location = new System.Drawing.Point(3, 0);
             this.durationNow.Name = "durationNow";
             this.durationNow.Padding = new System.Windows.Forms.Padding(0, 11, 0, 0);
-            this.durationNow.Size = new System.Drawing.Size(34, 37);
+            this.durationNow.Size = new System.Drawing.Size(30, 37);
             this.durationNow.TabIndex = 10;
             this.durationNow.Text = "00:00";
             // 
@@ -201,10 +202,10 @@
             this.durationTotal.AutoSize = true;
             this.durationTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.durationTotal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.durationTotal.Location = new System.Drawing.Point(1162, 0);
+            this.durationTotal.Location = new System.Drawing.Point(1140, 0);
             this.durationTotal.Name = "durationTotal";
             this.durationTotal.Padding = new System.Windows.Forms.Padding(0, 11, 0, 0);
-            this.durationTotal.Size = new System.Drawing.Size(35, 37);
+            this.durationTotal.Size = new System.Drawing.Size(57, 37);
             this.durationTotal.TabIndex = 11;
             this.durationTotal.Text = "00:00";
             // 
@@ -219,7 +220,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 37);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(173, 34);
+            this.panel1.Size = new System.Drawing.Size(169, 34);
             this.panel1.TabIndex = 0;
             // 
             // repeatButton
@@ -296,7 +297,7 @@
             // 
             this.nowPlaying.AutoSize = true;
             this.nowPlaying.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nowPlaying.Location = new System.Drawing.Point(200, 37);
+            this.nowPlaying.Location = new System.Drawing.Point(178, 37);
             this.nowPlaying.Name = "nowPlaying";
             this.nowPlaying.Padding = new System.Windows.Forms.Padding(10, 7, 5, 0);
             this.nowPlaying.Size = new System.Drawing.Size(125, 26);
@@ -307,7 +308,7 @@
             // 
             this.trackName.AutoSize = true;
             this.trackName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trackName.Location = new System.Drawing.Point(333, 37);
+            this.trackName.Location = new System.Drawing.Point(311, 37);
             this.trackName.Name = "trackName";
             this.trackName.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
             this.trackName.Size = new System.Drawing.Size(23, 25);
@@ -336,7 +337,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(1200, 676);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // backgroundCredits
             // 
@@ -373,7 +373,7 @@
             this.trackInfo.Location = new System.Drawing.Point(0, 463);
             this.trackInfo.Name = "trackInfo";
             this.trackInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.trackInfo.Size = new System.Drawing.Size(264, 157);
+            this.trackInfo.Size = new System.Drawing.Size(300, 157);
             this.trackInfo.TabIndex = 12;
             // 
             // toggleAlbumCover
@@ -385,7 +385,7 @@
             this.toggleAlbumCover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.toggleAlbumCover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.toggleAlbumCover.ForeColor = System.Drawing.Color.White;
-            this.toggleAlbumCover.Location = new System.Drawing.Point(244, 2);
+            this.toggleAlbumCover.Location = new System.Drawing.Point(280, 7);
             this.toggleAlbumCover.Name = "toggleAlbumCover";
             this.toggleAlbumCover.Size = new System.Drawing.Size(14, 14);
             this.toggleAlbumCover.TabIndex = 12;
@@ -401,7 +401,7 @@
             this.toggleInfoPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.toggleInfoPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.toggleInfoPanel.ForeColor = System.Drawing.Color.White;
-            this.toggleInfoPanel.Location = new System.Drawing.Point(244, 137);
+            this.toggleInfoPanel.Location = new System.Drawing.Point(280, 141);
             this.toggleInfoPanel.Name = "toggleInfoPanel";
             this.toggleInfoPanel.Size = new System.Drawing.Size(14, 14);
             this.toggleInfoPanel.TabIndex = 7;
@@ -412,10 +412,9 @@
             // 
             this.bitrateValue.AutoSize = true;
             this.bitrateValue.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bitrateValue.Location = new System.Drawing.Point(75, 126);
+            this.bitrateValue.Location = new System.Drawing.Point(79, 127);
             this.bitrateValue.Name = "bitrateValue";
-            this.bitrateValue.Padding = new System.Windows.Forms.Padding(4);
-            this.bitrateValue.Size = new System.Drawing.Size(23, 23);
+            this.bitrateValue.Size = new System.Drawing.Size(15, 15);
             this.bitrateValue.TabIndex = 11;
             this.bitrateValue.Text = "--";
             // 
@@ -423,10 +422,9 @@
             // 
             this.bitrateLabel.AutoSize = true;
             this.bitrateLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bitrateLabel.Location = new System.Drawing.Point(6, 126);
+            this.bitrateLabel.Location = new System.Drawing.Point(10, 128);
             this.bitrateLabel.Name = "bitrateLabel";
-            this.bitrateLabel.Padding = new System.Windows.Forms.Padding(4);
-            this.bitrateLabel.Size = new System.Drawing.Size(53, 23);
+            this.bitrateLabel.Size = new System.Drawing.Size(45, 15);
             this.bitrateLabel.TabIndex = 10;
             this.bitrateLabel.Text = "Bitrate";
             // 
@@ -543,9 +541,9 @@
             // albumCover
             // 
             this.albumCover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.albumCover.Location = new System.Drawing.Point(0, 199);
+            this.albumCover.Location = new System.Drawing.Point(0, 167);
             this.albumCover.Name = "albumCover";
-            this.albumCover.Size = new System.Drawing.Size(264, 264);
+            this.albumCover.Size = new System.Drawing.Size(300, 300);
             this.albumCover.TabIndex = 13;
             this.albumCover.TabStop = false;
             // 
@@ -558,7 +556,7 @@
             this.trackInfoMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.trackInfoMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.trackInfoMenu.ForeColor = System.Drawing.Color.White;
-            this.trackInfoMenu.Location = new System.Drawing.Point(270, 590);
+            this.trackInfoMenu.Location = new System.Drawing.Point(306, 591);
             this.trackInfoMenu.Name = "trackInfoMenu";
             this.trackInfoMenu.Size = new System.Drawing.Size(30, 30);
             this.trackInfoMenu.TabIndex = 13;
@@ -574,7 +572,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 738F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.tableLayoutPanel1.Controls.Add(this.nowPlaying, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.durationSlider, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.durationNow, 0, 0);
@@ -612,7 +610,7 @@
             0,
             0,
             0});
-            this.durationSlider.Location = new System.Drawing.Point(43, 3);
+            this.durationSlider.Location = new System.Drawing.Point(39, 3);
             this.durationSlider.Maximum = new decimal(new int[] {
             100,
             0,
@@ -636,7 +634,7 @@
             0});
             this.durationSlider.ShowDivisionsText = true;
             this.durationSlider.ShowSmallScale = false;
-            this.durationSlider.Size = new System.Drawing.Size(1113, 31);
+            this.durationSlider.Size = new System.Drawing.Size(1095, 31);
             this.durationSlider.SmallChange = new decimal(new int[] {
             1,
             0,
@@ -678,7 +676,7 @@
             0,
             0,
             0});
-            this.volumeSlider.Location = new System.Drawing.Point(1100, 40);
+            this.volumeSlider.Location = new System.Drawing.Point(1078, 40);
             this.volumeSlider.Maximum = new decimal(new int[] {
             125,
             0,
@@ -730,7 +728,7 @@
             // 
             this.volumeIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("volumeIcon.BackgroundImage")));
             this.volumeIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.volumeIcon.Location = new System.Drawing.Point(1071, 40);
+            this.volumeIcon.Location = new System.Drawing.Point(1049, 40);
             this.volumeIcon.Name = "volumeIcon";
             this.volumeIcon.Size = new System.Drawing.Size(23, 23);
             this.volumeIcon.TabIndex = 15;
@@ -742,6 +740,21 @@
             this.volumeTooltip.BackColor = System.Drawing.Color.Black;
             this.volumeTooltip.ForeColor = System.Drawing.Color.White;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(306, 555);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 30);
+            this.button1.TabIndex = 15;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -749,6 +762,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.trackInfoMenu);
             this.Controls.Add(this.albumCover);
@@ -826,6 +840,7 @@
         private System.Windows.Forms.PictureBox volumeIcon;
         private System.Windows.Forms.ToolTip volumeTooltip;
         private System.Windows.Forms.ToolTip controlsTooltip;
+        private System.Windows.Forms.Button button1;
     }
 }
 

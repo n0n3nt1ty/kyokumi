@@ -2223,4 +2223,12 @@
   <metadata name="controlsTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>576, 17</value>
   </metadata>
+  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAJRJREFUSEvt
+        kkEKg0AQBPches7bFSEfS0TzgaRnUydxFFovggV9K2pFptycyncHNB86KWg+dFLQfOikoPnQSUHzoXM8
+        lEH/fiCH/kUeUKfVBu2jjVqvVVB81Ij4u9ZWQPNRI748Bc1HjfgtKWg+amw9MKH5KPL8t1bp0HwUeWhx
+        OUteWoN2DIXikuI0Z9Zp58QvRCk/9ri6I0ms0qIAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

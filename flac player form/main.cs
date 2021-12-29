@@ -15,9 +15,7 @@ namespace flac_player_form
         bool shuffle = false;
         bool repeat = false;
         bool albumCoverVisible = false;
-        bool trackInfoVisible = true;
         int currentTrack = 0;
-        int volume = 0;
         public main()
         {
             InitializeComponent();
@@ -32,79 +30,134 @@ namespace flac_player_form
 
         private void getAttributes()
         {
-            trackName.Text = "";
-            artistValue.Text = "";
-            var file = TagLib.File.Create(playlist[currentTrack]);
-            string title = file.Tag.Title;
-            string album = file.Tag.Album;
-            string year = "";
-            string artist = "";
-            string seconds_display = "";
-            //add 0 to seconds if less than 10
-            if (file.Properties.Duration.Seconds <= 9)
+            if (repeat == true)
             {
-                seconds_display = "0" + file.Properties.Duration.Seconds.ToString();
+
             }
             else
             {
-                seconds_display = file.Properties.Duration.Seconds.ToString();
-            }
-            //Check if tags exist, if not replace tags with unknown
-            if (String.IsNullOrWhiteSpace(title))
-            {
-                title = Path.GetFileNameWithoutExtension(file.Name);
-            }
-            if (String.IsNullOrWhiteSpace(file.Tag.Album))
-            {
-                album = "Unknown";
-            }
-            if (file.Tag.Year == 0)
-            {
-                year = "Unknown";
-            }
-            else
-            {
-                year = file.Tag.Year.ToString();
-            }
-            //try to get the artist
-            try
-            {
-                artist = file.Tag.Performers[0];
-            }
-            catch (Exception ex)
-            {
-                artist = "Unknown";
-            }
+                trackName.Text = "";
+                artistValue.Text = "";
+                var file = TagLib.File.Create(playlist[currentTrack]);
+                string title = file.Tag.Title;
+                string album = file.Tag.Album;
+                string year = "";
+                string artist = "";
+                string seconds_display = "";
+                //add 0 to seconds if less than 10
+                if (file.Properties.Duration.Seconds <= 9)
+                {
+                    seconds_display = "0" + file.Properties.Duration.Seconds.ToString();
+                }
+                else
+                {
+                    seconds_display = file.Properties.Duration.Seconds.ToString();
+                }
+                //Check if tags exist, if not replace tags with unknown
+                //Title
+                if (String.IsNullOrWhiteSpace(title))
+                {
+                    title = Path.GetFileNameWithoutExtension(file.Name);
+                    //Current Track
+                    trackName.Text = title + " by ";
+                }
+                else 
+                {
+                    if (title.Length > 25)
+                    {
+                        title = title.Substring(0, 25) + "...";
+                    }
+                    //Current Track
+                    trackName.Text = title + " by ";
+                }
+                //Albumsssssssssssssssssssssssssssssssssssssssss
+                if (String.IsNullOrWhiteSpace(file.Tag.Album))
+                {
+                    album = "Unknown";
+                }
+                else if (album.Length > 25)
+                {
+                    album = album.Substring(0, 25) + "...";
+                }
+                //Year
+                if (file.Tag.Year == 0)
+                {
+                    year = "Unknown";
+                }
+                else
+                {
+                    year = file.Tag.Year.ToString();
+                }
+                //Artist
+                try
+                {
+                    artist = file.Tag.Performers[0];
+                    //Current Track
+                    trackName.Text = trackName.Text + artist;
+                    //Is the name too long?
+                    if (artist.Length > 25)
+                    {
+                        artist = artist.Substring(0, 25) + "...";
+                        //Current Track
+                        trackName.Text = trackName.Text + artist;
+                    }
 
-            //Update track info labels
-            artistValue.Text = artist;
-            titleValue.Text = title;
-            albumValue.Text = album;
-            yearValue.Text = year;
-            lengthValue.Text = file.Properties.Duration.Minutes.ToString() + ":" + seconds_display;
-            bitrateValue.Text = file.Properties.AudioBitrate.ToString() + " kbps";
+                }
+                catch (Exception ex)
+                {
+                    artist = "Unknown";
+                    //Current Track
+                    trackName.Text = trackName.Text + artist;
+                }
 
-            //Get cover
-            //try to set the cover
-            try
-            {
-                TagLib.IPicture cover = file.Tag.Pictures[0];
-                MemoryStream ms = new MemoryStream(cover.Data.Data);
-                ms.Seek(0, SeekOrigin.Begin);
-                albumCover.BackgroundImage = System.Drawing.Image.FromStream(ms);
-                albumCover.Show();
-                albumCoverVisible = true;
-                toggleAlbumCover.BackgroundImage = System.Drawing.Image.FromFile(@"assets\down.png");
-            }
-            catch (Exception ex)
-            {
-                toggleAlbumCover.BackgroundImage = System.Drawing.Image.FromFile(@"assets\up.png");
-                albumCoverVisible = false;
-                albumCover.Hide();
-            }
+                //Update track info labels
+                artistValue.Text = artist;
+                titleValue.Text = title;
+                albumValue.Text = album;
+                yearValue.Text = year;
+                lengthValue.Text = file.Properties.Duration.Minutes.ToString() + ":" + seconds_display;
+                bitrateValue.Text = file.Properties.AudioBitrate.ToString() + " kbps";
 
-            //Current Track
-            trackName.Text = artist + " - " + title;
+                //Set bitrate label color
+                if (file.Properties.AudioBitrate <= 196)
+                {
+                    bitrateValue.BackColor = Color.OrangeRed;
+                }
+                else if (file.Properties.AudioBitrate <= 320 && file.Properties.AudioBitrate > 196)
+                {
+                    bitrateValue.BackColor = Color.Green;
+                }
+                else if (file.Properties.AudioBitrate <= 1000 && file.Properties.AudioBitrate > 320)
+                {
+                    bitrateValue.BackColor = Color.FromArgb(22, 147, 173);
+                }
+                else if (file.Properties.AudioBitrate <= 1411 && file.Properties.AudioBitrate > 1000)
+                {
+                    bitrateValue.BackColor = Color.Purple;
+                }
+                else if (file.Properties.AudioBitrate <= 99999 && file.Properties.AudioBitrate > 1411)
+                {
+                    bitrateValue.BackColor = Color.Gold;
+                }
+
+                //Get cover
+                //try to set the cover
+                try
+                {
+                    TagLib.IPicture cover = file.Tag.Pictures[0];
+                    MemoryStream ms = new MemoryStream(cover.Data.Data);
+                    ms.Seek(0, SeekOrigin.Begin);
+                    albumCover.BackgroundImage = System.Drawing.Image.FromStream(ms);
+                }
+                catch (Exception ex)
+                {
+                    toggleAlbumCover.BackgroundImage = System.Drawing.Image.FromFile(@"assets\up.png");
+                    albumCoverVisible = false;
+                    albumCover.Hide();
+                }
+
+
+            }
         }
         private void play()
         {
@@ -181,11 +234,6 @@ namespace flac_player_form
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             libVLC = new LibVLC();
@@ -202,6 +250,8 @@ namespace flac_player_form
             controlsTooltip.SetToolTip(previousTrack, "Previous track");
             controlsTooltip.SetToolTip(shuffleButton, "Shuffle play");
             controlsTooltip.SetToolTip(repeatButton, "Repeat mode");
+            //File dialog filter
+            openSongs.Filter = "All Audio Files|*.wav;*.aac;*.flac;*.wma;*.wmv;*.mpg;*.mpeg;*.m1v;*.mp2;*.mp3;*.mpa;*.mpe;*.m3u;*.3g2;*.3gp2;*.3gp;*.3gpp;*.m4a;*.cda;*.aif;*.aifc;*.aiff;*.mid;*.midi;*.rmi;";
         }
 
         private void durationSlider_MouseDown(object sender, MouseEventArgs e)
@@ -249,6 +299,25 @@ namespace flac_player_form
             }
             //PLAY
             play();
+            //Get cover
+            //try to set the cover
+            var f = TagLib.File.Create(playlist[currentTrack]);
+            try
+            {
+                TagLib.IPicture cover = f.Tag.Pictures[0];
+                MemoryStream ms = new MemoryStream(cover.Data.Data);
+                ms.Seek(0, SeekOrigin.Begin);
+                albumCover.BackgroundImage = System.Drawing.Image.FromStream(ms);
+                toggleAlbumCover.BackgroundImage = System.Drawing.Image.FromFile(@"assets\down.png");
+                albumCover.Show();
+                albumCoverVisible = true;
+            }
+            catch (Exception ex)
+            {
+                toggleAlbumCover.BackgroundImage = System.Drawing.Image.FromFile(@"assets\up.png");
+                albumCoverVisible = false;
+                albumCover.Hide();
+            }
         }
 
         private void nextTrack_Click(object sender, EventArgs e)
@@ -320,7 +389,6 @@ namespace flac_player_form
         }
         private void toggleInfoPanel_Click(object sender, EventArgs e)
         {
-            trackInfoVisible = false;
             trackInfo.Hide();
             albumCover.Hide();
             trackInfoMenu.Show();
@@ -344,7 +412,6 @@ namespace flac_player_form
 
         private void trackInfoMenu_Click(object sender, EventArgs e)
         {
-            trackInfoVisible = true;
             trackInfo.Show();
             trackInfoMenu.Hide();
             if (albumCoverVisible == false)
