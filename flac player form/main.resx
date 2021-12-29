@@ -2196,19 +2196,6 @@
         doZsBqsRavvZJZYOZPuj/L/gHuX/Bfco/8UFXySEA1GybcpGfmgrAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toggleInfoPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAaxJREFUSEvd
-        lbtKA0EUhlPECxhBEgwKgTyBbyASQaz1LQSfwDRa+gyCRSpro7UYUlnYeK1UUCwtRFQQNH7/mXHdKzGw
-        IvjBx+ycc5yz2Z0dC/+PXq835i/zh8U38BKnfSg/dOd4ikJj1cfHcQdv8Blf8Q73cRXLtsBPoLiKaU2W
-        8E3BFJ5wDYu2SD8onMF3FOEmy5jVRBxhzRbJgoIpvFB1iHCTEdSjbGAb41xh3RaLQ0J/eK6qFIImYYg1
-        LRtFN1jyJd8Q3LJ0lA6eucvMJnuWjdLyaQeBWRdPsIB68bc2S2nCfN4ySRq+xIoOXCxBxecf3NSINOFa
-        2ziNri+xoq6LJbBnyXjvpgHhFz+Kaburo7zBRLsiDfuZjJtuGiHcJL6FP3BOuQACLUtFafvcMKqJfoke
-        V+KdMIabbCsWgWAJ49+AaPqSAGJ68Yndxagmx5h+YJKooz6WONqK2i26iQou4iF+EW4yZItlQUEN9dkP
-        StCkLxQWUQeYDrJ+POK1uxygiaC4jDqSdTTriNZR/YJ6ybu4ghMYP4Xz/6fFopN4gus+lD+/cud/TKHw
-        CRgE/64vTmJQAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="trackInfoMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAJRJREFUSEvt
@@ -2223,12 +2210,11 @@
   <metadata name="controlsTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>576, 17</value>
   </metadata>
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="playlistMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAJRJREFUSEvt
-        kkEKg0AQBPches7bFSEfS0TzgaRnUydxFFovggV9K2pFptycyncHNB86KWg+dFLQfOikoPnQSUHzoXM8
-        lEH/fiCH/kUeUKfVBu2jjVqvVVB81Ij4u9ZWQPNRI748Bc1HjfgtKWg+amw9MKH5KPL8t1bp0HwUeWhx
-        OUteWoN2DIXikuI0Z9Zp58QvRCk/9ri6I0ms0qIAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAFxJREFUSEvt
+        0rEKwCAMRdH8dcc69q/TqLdxEDoUBynvgEPekGCIyT7cvcS7KNei+SOHUH9Ciy7qo8fNSbxuQBVZ/UWh
+        lBkr0hUlWgyR6YresSJdUaLFEJmu6JfMbg9e6kIqHKLVAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
