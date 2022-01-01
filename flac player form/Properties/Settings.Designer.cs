@@ -8,22 +8,366 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace flac_player_form.Properties
-{
-
-
+namespace flac_player_form.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.0.3.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color ui_textColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ui_textColor"]));
+            }
+            set {
+                this["ui_textColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25, 25, 25")]
+        public global::System.Drawing.Color ui_textBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ui_textBackgroundColor"]));
+            }
+            set {
+                this["ui_textBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("91, 176, 225")]
+        public global::System.Drawing.Color ui_primaryColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ui_primaryColor"]));
+            }
+            set {
+                this["ui_primaryColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25, 25, 25")]
+        public global::System.Drawing.Color ui_backgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ui_backgroundColor"]));
+            }
+            set {
+                this["ui_backgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public decimal ui_textSize {
+            get {
+                return ((decimal)(this["ui_textSize"]));
+            }
+            set {
+                this["ui_textSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Arial, 8.25pt")]
+        public global::System.Drawing.Font ui_textFont {
+            get {
+                return ((global::System.Drawing.Font)(this["ui_textFont"]));
+            }
+            set {
+                this["ui_textFont"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25, 25, 25")]
+        public global::System.Drawing.Color controls_playPauseBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["controls_playPauseBackColor"]));
+            }
+            set {
+                this["controls_playPauseBackColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25, 25, 25")]
+        public global::System.Drawing.Color controls_previousBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["controls_previousBackColor"]));
+            }
+            set {
+                this["controls_previousBackColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25, 25, 25")]
+        public global::System.Drawing.Color controls_nextBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["controls_nextBackColor"]));
+            }
+            set {
+                this["controls_nextBackColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25, 25, 25")]
+        public global::System.Drawing.Color controls_repeatBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["controls_repeatBackColor"]));
+            }
+            set {
+                this["controls_repeatBackColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25, 25, 25")]
+        public global::System.Drawing.Color controls_shuffleBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["controls_shuffleBackColor"]));
+            }
+            set {
+                this["controls_shuffleBackColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("128, 255, 255")]
+        public global::System.Drawing.Color trackSlider_elapsedInnerColor {
+            get {
+                return ((global::System.Drawing.Color)(this["trackSlider_elapsedInnerColor"]));
+            }
+            set {
+                this["trackSlider_elapsedInnerColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 192, 192")]
+        public global::System.Drawing.Color trackSlider_elapsedPenColorTop {
+            get {
+                return ((global::System.Drawing.Color)(this["trackSlider_elapsedPenColorTop"]));
+            }
+            set {
+                this["trackSlider_elapsedPenColorTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Teal")]
+        public global::System.Drawing.Color trackSlider_elapsedPenColorBottom {
+            get {
+                return ((global::System.Drawing.Color)(this["trackSlider_elapsedPenColorBottom"]));
+            }
+            set {
+                this["trackSlider_elapsedPenColorBottom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color trackSlider_barInnerColor {
+            get {
+                return ((global::System.Drawing.Color)(this["trackSlider_barInnerColor"]));
+            }
+            set {
+                this["trackSlider_barInnerColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("55, 60, 74")]
+        public global::System.Drawing.Color trackSlider_barPenColorTop {
+            get {
+                return ((global::System.Drawing.Color)(this["trackSlider_barPenColorTop"]));
+            }
+            set {
+                this["trackSlider_barPenColorTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("87, 94, 110")]
+        public global::System.Drawing.Color trackSlider_barPenColorBottom {
+            get {
+                return ((global::System.Drawing.Color)(this["trackSlider_barPenColorBottom"]));
+            }
+            set {
+                this["trackSlider_barPenColorBottom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("128, 255, 255")]
+        public global::System.Drawing.Color volumeSlider_elapsedInnerColor {
+            get {
+                return ((global::System.Drawing.Color)(this["volumeSlider_elapsedInnerColor"]));
+            }
+            set {
+                this["volumeSlider_elapsedInnerColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 192, 192")]
+        public global::System.Drawing.Color volumeSlider_elapsedPenColorTop {
+            get {
+                return ((global::System.Drawing.Color)(this["volumeSlider_elapsedPenColorTop"]));
+            }
+            set {
+                this["volumeSlider_elapsedPenColorTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Teal")]
+        public global::System.Drawing.Color volumeSlider_elapsedPenColorBottom {
+            get {
+                return ((global::System.Drawing.Color)(this["volumeSlider_elapsedPenColorBottom"]));
+            }
+            set {
+                this["volumeSlider_elapsedPenColorBottom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color volumeSlider_barInnerColor {
+            get {
+                return ((global::System.Drawing.Color)(this["volumeSlider_barInnerColor"]));
+            }
+            set {
+                this["volumeSlider_barInnerColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("55, 60, 74")]
+        public global::System.Drawing.Color volumeSlider_barPenColorTop {
+            get {
+                return ((global::System.Drawing.Color)(this["volumeSlider_barPenColorTop"]));
+            }
+            set {
+                this["volumeSlider_barPenColorTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("87, 94, 110")]
+        public global::System.Drawing.Color volumeSlider_barPenColorBottom {
+            get {
+                return ((global::System.Drawing.Color)(this["volumeSlider_barPenColorBottom"]));
+            }
+            set {
+                this["volumeSlider_barPenColorBottom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("51, 114, 166")]
+        public global::System.Drawing.Color trackSlider_thumbInnerColor {
+            get {
+                return ((global::System.Drawing.Color)(this["trackSlider_thumbInnerColor"]));
+            }
+            set {
+                this["trackSlider_thumbInnerColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("22, 147, 173")]
+        public global::System.Drawing.Color trackSlider_thumbOuterColor {
+            get {
+                return ((global::System.Drawing.Color)(this["trackSlider_thumbOuterColor"]));
+            }
+            set {
+                this["trackSlider_thumbOuterColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("63, 103, 199")]
+        public global::System.Drawing.Color trackSlider_thumbPenColor {
+            get {
+                return ((global::System.Drawing.Color)(this["trackSlider_thumbPenColor"]));
+            }
+            set {
+                this["trackSlider_thumbPenColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("51, 114, 166")]
+        public global::System.Drawing.Color volumeSlider_thumbInnerColor {
+            get {
+                return ((global::System.Drawing.Color)(this["volumeSlider_thumbInnerColor"]));
+            }
+            set {
+                this["volumeSlider_thumbInnerColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("22, 147, 173")]
+        public global::System.Drawing.Color volumeSlider_thumbOuterColor {
+            get {
+                return ((global::System.Drawing.Color)(this["volumeSlider_thumbOuterColor"]));
+            }
+            set {
+                this["volumeSlider_thumbOuterColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("63, 103, 199")]
+        public global::System.Drawing.Color volumeSlider_thumbPenColor {
+            get {
+                return ((global::System.Drawing.Color)(this["volumeSlider_thumbPenColor"]));
+            }
+            set {
+                this["volumeSlider_thumbPenColor"] = value;
             }
         }
     }

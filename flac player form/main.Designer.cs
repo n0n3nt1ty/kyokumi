@@ -75,8 +75,8 @@
             this.controlsTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.playlistMenu = new System.Windows.Forms.Button();
             this.playlistPanel = new System.Windows.Forms.Panel();
-            this.playlistList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.playlistList = new System.Windows.Forms.ListBox();
             this.durationSlider = new ColorSlider.ColorSlider();
             this.volumeSlider = new ColorSlider.ColorSlider();
             this.menuStrip1.SuspendLayout();
@@ -91,7 +91,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Black;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.menuStrip1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
@@ -114,7 +114,7 @@
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.openToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.openToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
@@ -130,7 +130,7 @@
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.settingsToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.playbackSettingsToolStripMenuItem,
@@ -140,11 +140,10 @@
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // playbackSettingsToolStripMenuItem
             // 
-            this.playbackSettingsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.playbackSettingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.playbackSettingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.playbackSettingsToolStripMenuItem.Name = "playbackSettingsToolStripMenuItem";
             this.playbackSettingsToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
@@ -152,15 +151,16 @@
             // 
             // themeToolStripMenuItem
             // 
-            this.themeToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.themeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.themeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
             this.themeToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.themeToolStripMenuItem.Text = "Theme...";
+            this.themeToolStripMenuItem.Click += new System.EventHandler(this.themeToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.aboutToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
@@ -169,11 +169,11 @@
             // 
             // playButton
             // 
-            this.playButton.BackColor = System.Drawing.Color.Black;
+            this.playButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.playButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playButton.BackgroundImage")));
             this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.playButton.FlatAppearance.BorderSize = 0;
-            this.playButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.playButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playButton.ForeColor = System.Drawing.Color.White;
             this.playButton.Location = new System.Drawing.Point(35, 3);
@@ -191,6 +191,7 @@
             // durationNow
             // 
             this.durationNow.AutoSize = true;
+            this.durationNow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.durationNow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.durationNow.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.durationNow.Location = new System.Drawing.Point(3, 0);
@@ -214,6 +215,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
             this.panel1.Controls.Add(this.repeatButton);
             this.panel1.Controls.Add(this.shuffleButton);
@@ -228,13 +230,12 @@
             // 
             // repeatButton
             // 
-            this.repeatButton.BackColor = System.Drawing.Color.Black;
+            this.repeatButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.repeatButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("repeatButton.BackgroundImage")));
             this.repeatButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.repeatButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.repeatButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.repeatButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.repeatButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.repeatButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.repeatButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.repeatButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.repeatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.repeatButton.ForeColor = System.Drawing.Color.White;
             this.repeatButton.Location = new System.Drawing.Point(142, 3);
@@ -246,13 +247,12 @@
             // 
             // shuffleButton
             // 
-            this.shuffleButton.BackColor = System.Drawing.Color.Black;
+            this.shuffleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.shuffleButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("shuffleButton.BackgroundImage")));
             this.shuffleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.shuffleButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.shuffleButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-            this.shuffleButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.shuffleButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.shuffleButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.shuffleButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.shuffleButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.shuffleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shuffleButton.ForeColor = System.Drawing.Color.White;
             this.shuffleButton.Location = new System.Drawing.Point(110, 3);
@@ -264,7 +264,7 @@
             // 
             // nextTrack
             // 
-            this.nextTrack.BackColor = System.Drawing.Color.Black;
+            this.nextTrack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.nextTrack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("nextTrack.BackgroundImage")));
             this.nextTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.nextTrack.Enabled = false;
@@ -281,7 +281,7 @@
             // 
             // previousTrack
             // 
-            this.previousTrack.BackColor = System.Drawing.Color.Black;
+            this.previousTrack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.previousTrack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("previousTrack.BackgroundImage")));
             this.previousTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.previousTrack.Enabled = false;
@@ -300,7 +300,7 @@
             // 
             this.nowPlaying.AutoSize = true;
             this.nowPlaying.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nowPlaying.Location = new System.Drawing.Point(208, 37);
+            this.nowPlaying.Location = new System.Drawing.Point(219, 37);
             this.nowPlaying.Name = "nowPlaying";
             this.nowPlaying.Padding = new System.Windows.Forms.Padding(10, 7, 5, 0);
             this.nowPlaying.Size = new System.Drawing.Size(125, 26);
@@ -311,7 +311,7 @@
             // 
             this.trackName.AutoSize = true;
             this.trackName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trackName.Location = new System.Drawing.Point(339, 37);
+            this.trackName.Location = new System.Drawing.Point(350, 37);
             this.trackName.Name = "trackName";
             this.trackName.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
             this.trackName.Size = new System.Drawing.Size(23, 25);
@@ -359,6 +359,7 @@
             // 
             // trackInfo
             // 
+            this.trackInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.trackInfo.Controls.Add(this.toggleAlbumCover);
             this.trackInfo.Controls.Add(this.bitrateValue);
             this.trackInfo.Controls.Add(this.bitrateLabel);
@@ -380,7 +381,7 @@
             // 
             // toggleAlbumCover
             // 
-            this.toggleAlbumCover.BackColor = System.Drawing.Color.Black;
+            this.toggleAlbumCover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.toggleAlbumCover.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toggleAlbumCover.BackgroundImage")));
             this.toggleAlbumCover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toggleAlbumCover.FlatAppearance.BorderSize = 0;
@@ -526,6 +527,7 @@
             // 
             // albumCover
             // 
+            this.albumCover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.albumCover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.albumCover.Location = new System.Drawing.Point(36, 163);
             this.albumCover.Name = "albumCover";
@@ -535,7 +537,7 @@
             // 
             // trackInfoMenu
             // 
-            this.trackInfoMenu.BackColor = System.Drawing.Color.Black;
+            this.trackInfoMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.trackInfoMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("trackInfoMenu.BackgroundImage")));
             this.trackInfoMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.trackInfoMenu.FlatAppearance.BorderSize = 0;
@@ -551,13 +553,14 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.tableLayoutPanel1.ColumnCount = 7;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.48781F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.51852F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.48148F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 710F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 680F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel1.Controls.Add(this.durationSlider, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.durationNow, 0, 0);
@@ -581,7 +584,7 @@
             // 
             this.volumeIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("volumeIcon.BackgroundImage")));
             this.volumeIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.volumeIcon.Location = new System.Drawing.Point(1049, 40);
+            this.volumeIcon.Location = new System.Drawing.Point(1030, 40);
             this.volumeIcon.Name = "volumeIcon";
             this.volumeIcon.Size = new System.Drawing.Size(21, 23);
             this.volumeIcon.TabIndex = 15;
@@ -595,7 +598,7 @@
             // 
             // playlistMenu
             // 
-            this.playlistMenu.BackColor = System.Drawing.Color.Black;
+            this.playlistMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.playlistMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playlistMenu.BackgroundImage")));
             this.playlistMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.playlistMenu.FlatAppearance.BorderSize = 0;
@@ -611,6 +614,7 @@
             // 
             // playlistPanel
             // 
+            this.playlistPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.playlistPanel.Controls.Add(this.label1);
             this.playlistPanel.Controls.Add(this.playlistList);
             this.playlistPanel.Location = new System.Drawing.Point(342, 163);
@@ -618,36 +622,36 @@
             this.playlistPanel.Size = new System.Drawing.Size(383, 457);
             this.playlistPanel.TabIndex = 16;
             // 
-            // playlistList
-            // 
-            this.playlistList.BackColor = System.Drawing.Color.Black;
-            this.playlistList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.playlistList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.playlistList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playlistList.ForeColor = System.Drawing.Color.White;
-            this.playlistList.FormattingEnabled = true;
-            this.playlistList.ItemHeight = 15;
-            this.playlistList.Location = new System.Drawing.Point(3, 33);
-            this.playlistList.Name = "playlistList";
-            this.playlistList.Size = new System.Drawing.Size(377, 420);
-            this.playlistList.TabIndex = 0;
-            this.playlistList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.playlistList_DrawItem_1);
-            this.playlistList.SelectedIndexChanged += new System.EventHandler(this.playlistList_SelectedIndexChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Location = new System.Drawing.Point(3, 7);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(3);
             this.label1.Size = new System.Drawing.Size(119, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Loaded playlist";
             // 
+            // playlistList
+            // 
+            this.playlistList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.playlistList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.playlistList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.playlistList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playlistList.ForeColor = System.Drawing.Color.White;
+            this.playlistList.FormattingEnabled = true;
+            this.playlistList.ItemHeight = 15;
+            this.playlistList.Location = new System.Drawing.Point(3, 34);
+            this.playlistList.Name = "playlistList";
+            this.playlistList.Size = new System.Drawing.Size(377, 420);
+            this.playlistList.TabIndex = 0;
+            this.playlistList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.playlistList_DrawItem_1);
+            this.playlistList.SelectedIndexChanged += new System.EventHandler(this.playlistList_SelectedIndexChanged);
+            // 
             // durationSlider
             // 
-            this.durationSlider.BackColor = System.Drawing.Color.Black;
+            this.durationSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.durationSlider.BarPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(94)))), ((int)(((byte)(110)))));
             this.durationSlider.BarPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(60)))), ((int)(((byte)(74)))));
             this.durationSlider.BorderRoundRectSize = new System.Drawing.Size(8, 8);
@@ -715,7 +719,7 @@
             // 
             // volumeSlider
             // 
-            this.volumeSlider.BackColor = System.Drawing.Color.Black;
+            this.volumeSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.volumeSlider.BarPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(94)))), ((int)(((byte)(110)))));
             this.volumeSlider.BarPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(60)))), ((int)(((byte)(74)))));
             this.volumeSlider.BorderRoundRectSize = new System.Drawing.Size(8, 8);
@@ -730,7 +734,7 @@
             0,
             0,
             0});
-            this.volumeSlider.Location = new System.Drawing.Point(1077, 40);
+            this.volumeSlider.Location = new System.Drawing.Point(1058, 40);
             this.volumeSlider.Maximum = new decimal(new int[] {
             125,
             0,

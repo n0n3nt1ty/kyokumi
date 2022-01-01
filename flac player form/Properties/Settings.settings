@@ -1,7 +1,93 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="flac_player_form.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ui_textColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="ui_textBackgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">25, 25, 25</Value>
+    </Setting>
+    <Setting Name="ui_primaryColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">91, 176, 225</Value>
+    </Setting>
+    <Setting Name="ui_backgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">25, 25, 25</Value>
+    </Setting>
+    <Setting Name="ui_textSize" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="ui_textFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Arial, 8.25pt</Value>
+    </Setting>
+    <Setting Name="controls_playPauseBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">25, 25, 25</Value>
+    </Setting>
+    <Setting Name="controls_previousBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">25, 25, 25</Value>
+    </Setting>
+    <Setting Name="controls_nextBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">25, 25, 25</Value>
+    </Setting>
+    <Setting Name="controls_repeatBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">25, 25, 25</Value>
+    </Setting>
+    <Setting Name="controls_shuffleBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">25, 25, 25</Value>
+    </Setting>
+    <Setting Name="trackSlider_elapsedInnerColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">128, 255, 255</Value>
+    </Setting>
+    <Setting Name="trackSlider_elapsedPenColorTop" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">0, 192, 192</Value>
+    </Setting>
+    <Setting Name="trackSlider_elapsedPenColorBottom" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Teal</Value>
+    </Setting>
+    <Setting Name="trackSlider_barInnerColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="trackSlider_barPenColorTop" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">55, 60, 74</Value>
+    </Setting>
+    <Setting Name="trackSlider_barPenColorBottom" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">87, 94, 110</Value>
+    </Setting>
+    <Setting Name="volumeSlider_elapsedInnerColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">128, 255, 255</Value>
+    </Setting>
+    <Setting Name="volumeSlider_elapsedPenColorTop" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">0, 192, 192</Value>
+    </Setting>
+    <Setting Name="volumeSlider_elapsedPenColorBottom" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Teal</Value>
+    </Setting>
+    <Setting Name="volumeSlider_barInnerColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="volumeSlider_barPenColorTop" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">55, 60, 74</Value>
+    </Setting>
+    <Setting Name="volumeSlider_barPenColorBottom" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">87, 94, 110</Value>
+    </Setting>
+    <Setting Name="trackSlider_thumbInnerColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">51, 114, 166</Value>
+    </Setting>
+    <Setting Name="trackSlider_thumbOuterColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">22, 147, 173</Value>
+    </Setting>
+    <Setting Name="trackSlider_thumbPenColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">63, 103, 199</Value>
+    </Setting>
+    <Setting Name="volumeSlider_thumbInnerColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">51, 114, 166</Value>
+    </Setting>
+    <Setting Name="volumeSlider_thumbOuterColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">22, 147, 173</Value>
+    </Setting>
+    <Setting Name="volumeSlider_thumbPenColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">63, 103, 199</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

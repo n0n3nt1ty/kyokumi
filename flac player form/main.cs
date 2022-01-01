@@ -25,12 +25,10 @@ namespace flac_player_form
             LibVLCSharp.Shared.Core.Initialize();
 
         }
-        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void updateTheme()
         {
 
-
         }
-
         private void getAttributes()
         {
             trackName.Text = "";
@@ -287,7 +285,6 @@ namespace flac_player_form
         {
             openSongs.ShowDialog();
         }
-
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             playlist.Clear();
@@ -420,7 +417,7 @@ namespace flac_player_form
             else
             {
                 shuffle = false;
-                shuffleButton.FlatAppearance.BorderColor = Color.Black;
+                shuffleButton.FlatAppearance.BorderColor = Color.FromArgb(32, 33, 36);
             }
         }
 
@@ -434,7 +431,7 @@ namespace flac_player_form
             else
             {
                 repeat = false;
-                repeatButton.FlatAppearance.BorderColor = Color.Black;
+                repeatButton.FlatAppearance.BorderColor = Color.FromArgb(32, 33, 36);
             }
         }
 
@@ -540,7 +537,7 @@ namespace flac_player_form
                                           e.Bounds,
                                           e.Index,
                                           e.State ^ DrawItemState.Selected,
-                                          Color.Black,
+                                          Color.FromArgb(32, 33, 36),
                                           Color.FromArgb(22, 147, 173));//Accent color
             e.DrawBackground();
             e.Graphics.DrawString(playlistList.Items[e.Index].ToString(), e.Font, Brushes.White, e.Bounds, StringFormat.GenericDefault);
@@ -552,8 +549,14 @@ namespace flac_player_form
             currentTrack = playlistList.SelectedIndex;
             play();
         }
-    }
 
+        private void themeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            themeEditor themePage = new themeEditor();
+            themePage.TopLevel = true;
+            themePage.ShowDialog();
+        }
+    }
 }
 
 
