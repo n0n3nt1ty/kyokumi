@@ -71,6 +71,10 @@
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.button23 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.shuffleRepeatBorderColorButton = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.shuffleRepeatBorderColorPanel = new System.Windows.Forms.Panel();
+            this.shuffleRepeatBorderColorTextBox = new System.Windows.Forms.TextBox();
             this.repeatBackColorButton = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.repeatBackColorPanel = new System.Windows.Forms.Panel();
@@ -137,16 +141,13 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.fontSizeTrackBar = new System.Windows.Forms.TrackBar();
             this.fontButton = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.textPreview = new System.Windows.Forms.Label();
-            this.textBackgroundColorButton = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
-            this.textBackgroundColorPanel = new System.Windows.Forms.Panel();
-            this.textBackgroundColorTextBox = new System.Windows.Forms.TextBox();
             this.textColorButton = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.textColorPanel = new System.Windows.Forms.Panel();
@@ -169,12 +170,12 @@
             this.backgroundImagePathTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.backgroundImageLayout = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.backgroundPictureBox = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.loadDefault = new System.Windows.Forms.Button();
-            this.label34 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.volumeSliderPreview = new ColorSlider.ColorSlider();
             this.durationSliderPreview = new ColorSlider.ColorSlider();
             this.tabControl1.SuspendLayout();
@@ -187,7 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fontSizeTrackBar)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backgroundPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // saveChanges
@@ -197,7 +198,7 @@
             this.saveChanges.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(176)))), ((int)(((byte)(225)))));
             this.saveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveChanges.ForeColor = System.Drawing.Color.White;
-            this.saveChanges.Location = new System.Drawing.Point(669, 624);
+            this.saveChanges.Location = new System.Drawing.Point(673, 670);
             this.saveChanges.Name = "saveChanges";
             this.saveChanges.Size = new System.Drawing.Size(126, 27);
             this.saveChanges.TabIndex = 3;
@@ -213,7 +214,7 @@
             this.tabControl1.Location = new System.Drawing.Point(5, 8);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(794, 610);
+            this.tabControl1.Size = new System.Drawing.Size(794, 656);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -225,7 +226,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(786, 582);
+            this.tabPage1.Size = new System.Drawing.Size(786, 628);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Colors";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -270,7 +271,7 @@
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.textBox21);
             this.groupBox4.Controls.Add(this.button23);
-            this.groupBox4.Location = new System.Drawing.Point(396, 219);
+            this.groupBox4.Location = new System.Drawing.Point(396, 265);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(384, 357);
             this.groupBox4.TabIndex = 46;
@@ -621,6 +622,10 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.shuffleRepeatBorderColorButton);
+            this.groupBox5.Controls.Add(this.label33);
+            this.groupBox5.Controls.Add(this.shuffleRepeatBorderColorPanel);
+            this.groupBox5.Controls.Add(this.shuffleRepeatBorderColorTextBox);
             this.groupBox5.Controls.Add(this.repeatBackColorButton);
             this.groupBox5.Controls.Add(this.label31);
             this.groupBox5.Controls.Add(this.repeatBackColorPanel);
@@ -645,10 +650,48 @@
             this.groupBox5.Controls.Add(this.playPauseBackColorTextBox);
             this.groupBox5.Location = new System.Drawing.Point(396, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(384, 207);
+            this.groupBox5.Size = new System.Drawing.Size(384, 253);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Controls";
+            // 
+            // shuffleRepeatBorderColorButton
+            // 
+            this.shuffleRepeatBorderColorButton.Location = new System.Drawing.Point(291, 143);
+            this.shuffleRepeatBorderColorButton.Name = "shuffleRepeatBorderColorButton";
+            this.shuffleRepeatBorderColorButton.Size = new System.Drawing.Size(27, 25);
+            this.shuffleRepeatBorderColorButton.TabIndex = 62;
+            this.shuffleRepeatBorderColorButton.Text = "...";
+            this.shuffleRepeatBorderColorButton.UseVisualStyleBackColor = true;
+            this.shuffleRepeatBorderColorButton.Click += new System.EventHandler(this.shuffleRepeatBorderColorButton_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(175, 125);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(152, 15);
+            this.label33.TabIndex = 61;
+            this.label33.Text = "Shuffle/repeat border color";
+            // 
+            // shuffleRepeatBorderColorPanel
+            // 
+            this.shuffleRepeatBorderColorPanel.BackColor = System.Drawing.Color.White;
+            this.shuffleRepeatBorderColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shuffleRepeatBorderColorPanel.ForeColor = System.Drawing.Color.White;
+            this.shuffleRepeatBorderColorPanel.Location = new System.Drawing.Point(178, 143);
+            this.shuffleRepeatBorderColorPanel.Name = "shuffleRepeatBorderColorPanel";
+            this.shuffleRepeatBorderColorPanel.Size = new System.Drawing.Size(35, 25);
+            this.shuffleRepeatBorderColorPanel.TabIndex = 59;
+            // 
+            // shuffleRepeatBorderColorTextBox
+            // 
+            this.shuffleRepeatBorderColorTextBox.Location = new System.Drawing.Point(219, 143);
+            this.shuffleRepeatBorderColorTextBox.Multiline = true;
+            this.shuffleRepeatBorderColorTextBox.Name = "shuffleRepeatBorderColorTextBox";
+            this.shuffleRepeatBorderColorTextBox.ReadOnly = true;
+            this.shuffleRepeatBorderColorTextBox.Size = new System.Drawing.Size(66, 25);
+            this.shuffleRepeatBorderColorTextBox.TabIndex = 60;
             // 
             // repeatBackColorButton
             // 
@@ -658,6 +701,7 @@
             this.repeatBackColorButton.TabIndex = 58;
             this.repeatBackColorButton.Text = "...";
             this.repeatBackColorButton.UseVisualStyleBackColor = true;
+            this.repeatBackColorButton.Click += new System.EventHandler(this.repeatBackColorButton_Click);
             // 
             // label31
             // 
@@ -695,6 +739,7 @@
             this.shuffleBackColorButton.TabIndex = 54;
             this.shuffleBackColorButton.Text = "...";
             this.shuffleBackColorButton.UseVisualStyleBackColor = true;
+            this.shuffleBackColorButton.Click += new System.EventHandler(this.shuffleBackColorButton_Click);
             // 
             // label29
             // 
@@ -732,6 +777,7 @@
             this.nextBackColorButton.TabIndex = 50;
             this.nextBackColorButton.Text = "...";
             this.nextBackColorButton.UseVisualStyleBackColor = true;
+            this.nextBackColorButton.Click += new System.EventHandler(this.nextBackColorButton_Click);
             // 
             // label30
             // 
@@ -744,7 +790,7 @@
             // 
             // nextBackColorPanel
             // 
-            this.nextBackColorPanel.BackColor = System.Drawing.Color.Black;
+            this.nextBackColorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.nextBackColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nextBackColorPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.nextBackColorPanel.Location = new System.Drawing.Point(178, 50);
@@ -764,7 +810,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(203, 142);
+            this.label28.Location = new System.Drawing.Point(22, 183);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(50, 15);
             this.label28.TabIndex = 46;
@@ -778,7 +824,7 @@
             this.controlsBackgroundPanelPreview.Controls.Add(this.nextTrack);
             this.controlsBackgroundPanelPreview.Controls.Add(this.previousTrack);
             this.controlsBackgroundPanelPreview.Controls.Add(this.playButton);
-            this.controlsBackgroundPanelPreview.Location = new System.Drawing.Point(206, 160);
+            this.controlsBackgroundPanelPreview.Location = new System.Drawing.Point(25, 201);
             this.controlsBackgroundPanelPreview.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.controlsBackgroundPanelPreview.Name = "controlsBackgroundPanelPreview";
             this.controlsBackgroundPanelPreview.Size = new System.Drawing.Size(173, 34);
@@ -790,8 +836,6 @@
             this.repeatButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("repeatButton.BackgroundImage")));
             this.repeatButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.repeatButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.repeatButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.repeatButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.repeatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.repeatButton.ForeColor = System.Drawing.Color.White;
             this.repeatButton.Location = new System.Drawing.Point(142, 3);
@@ -799,6 +843,7 @@
             this.repeatButton.Size = new System.Drawing.Size(28, 28);
             this.repeatButton.TabIndex = 6;
             this.repeatButton.UseVisualStyleBackColor = false;
+            this.repeatButton.Click += new System.EventHandler(this.repeatButton_Click);
             // 
             // shuffleButton
             // 
@@ -806,8 +851,6 @@
             this.shuffleButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("shuffleButton.BackgroundImage")));
             this.shuffleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.shuffleButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.shuffleButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.shuffleButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.shuffleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shuffleButton.ForeColor = System.Drawing.Color.White;
             this.shuffleButton.Location = new System.Drawing.Point(110, 3);
@@ -815,6 +858,7 @@
             this.shuffleButton.Size = new System.Drawing.Size(28, 28);
             this.shuffleButton.TabIndex = 5;
             this.shuffleButton.UseVisualStyleBackColor = false;
+            this.shuffleButton.Click += new System.EventHandler(this.shuffleButton_Click);
             // 
             // nextTrack
             // 
@@ -822,7 +866,6 @@
             this.nextTrack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("nextTrack.BackgroundImage")));
             this.nextTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.nextTrack.FlatAppearance.BorderSize = 0;
-            this.nextTrack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.nextTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nextTrack.ForeColor = System.Drawing.Color.White;
             this.nextTrack.Location = new System.Drawing.Point(67, 3);
@@ -837,7 +880,6 @@
             this.previousTrack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("previousTrack.BackgroundImage")));
             this.previousTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.previousTrack.FlatAppearance.BorderSize = 0;
-            this.previousTrack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.previousTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.previousTrack.ForeColor = System.Drawing.Color.White;
             this.previousTrack.Location = new System.Drawing.Point(3, 3);
@@ -852,7 +894,6 @@
             this.playButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playButton.BackgroundImage")));
             this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.playButton.FlatAppearance.BorderSize = 0;
-            this.playButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playButton.ForeColor = System.Drawing.Color.White;
             this.playButton.Location = new System.Drawing.Point(35, 3);
@@ -869,6 +910,7 @@
             this.previousBackColorButton.TabIndex = 7;
             this.previousBackColorButton.Text = "...";
             this.previousBackColorButton.UseVisualStyleBackColor = true;
+            this.previousBackColorButton.Click += new System.EventHandler(this.previousBackColorButton_Click);
             // 
             // label26
             // 
@@ -906,6 +948,7 @@
             this.playPauseBackColorButton.TabIndex = 3;
             this.playPauseBackColorButton.Text = "...";
             this.playPauseBackColorButton.UseVisualStyleBackColor = true;
+            this.playPauseBackColorButton.Click += new System.EventHandler(this.playPauseBackColorButton_Click);
             // 
             // label27
             // 
@@ -918,7 +961,7 @@
             // 
             // playPauseBackColorPanel
             // 
-            this.playPauseBackColorPanel.BackColor = System.Drawing.Color.Black;
+            this.playPauseBackColorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.playPauseBackColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.playPauseBackColorPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.playPauseBackColorPanel.Location = new System.Drawing.Point(25, 50);
@@ -975,7 +1018,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.button7);
-            this.groupBox3.Location = new System.Drawing.Point(6, 219);
+            this.groupBox3.Location = new System.Drawing.Point(3, 265);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(384, 357);
             this.groupBox3.TabIndex = 3;
@@ -1333,10 +1376,6 @@
             this.groupBox1.Controls.Add(this.label37);
             this.groupBox1.Controls.Add(this.label36);
             this.groupBox1.Controls.Add(this.textPreview);
-            this.groupBox1.Controls.Add(this.textBackgroundColorButton);
-            this.groupBox1.Controls.Add(this.label33);
-            this.groupBox1.Controls.Add(this.textBackgroundColorPanel);
-            this.groupBox1.Controls.Add(this.textBackgroundColorTextBox);
             this.groupBox1.Controls.Add(this.textColorButton);
             this.groupBox1.Controls.Add(this.label32);
             this.groupBox1.Controls.Add(this.textColorPanel);
@@ -1351,10 +1390,20 @@
             this.groupBox1.Controls.Add(this.primaryColorTextBox);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(384, 207);
+            this.groupBox1.Size = new System.Drawing.Size(384, 253);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User interface";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(23, 155);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(169, 14);
+            this.label34.TabIndex = 68;
+            this.label34.Text = "Currently unavailable. Sorry :(";
             // 
             // fontSizeTrackBar
             // 
@@ -1375,7 +1424,7 @@
             // 
             // fontButton
             // 
-            this.fontButton.Location = new System.Drawing.Point(218, 127);
+            this.fontButton.Location = new System.Drawing.Point(21, 81);
             this.fontButton.Name = "fontButton";
             this.fontButton.Size = new System.Drawing.Size(27, 25);
             this.fontButton.TabIndex = 66;
@@ -1386,7 +1435,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(251, 132);
+            this.label38.Location = new System.Drawing.Point(54, 86);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(31, 15);
             this.label38.TabIndex = 65;
@@ -1416,49 +1465,11 @@
             this.textPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.textPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textPreview.ForeColor = System.Drawing.Color.White;
-            this.textPreview.Location = new System.Drawing.Point(218, 163);
+            this.textPreview.Location = new System.Drawing.Point(218, 155);
             this.textPreview.Name = "textPreview";
             this.textPreview.Size = new System.Drawing.Size(52, 17);
             this.textPreview.TabIndex = 61;
             this.textPreview.Text = "Preview";
-            // 
-            // textBackgroundColorButton
-            // 
-            this.textBackgroundColorButton.Location = new System.Drawing.Point(134, 96);
-            this.textBackgroundColorButton.Name = "textBackgroundColorButton";
-            this.textBackgroundColorButton.Size = new System.Drawing.Size(27, 25);
-            this.textBackgroundColorButton.TabIndex = 15;
-            this.textBackgroundColorButton.Text = "...";
-            this.textBackgroundColorButton.UseVisualStyleBackColor = true;
-            this.textBackgroundColorButton.Click += new System.EventHandler(this.textBackgroundColorButton_Click);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(18, 78);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(126, 15);
-            this.label33.TabIndex = 14;
-            this.label33.Text = "Text background color";
-            // 
-            // textBackgroundColorPanel
-            // 
-            this.textBackgroundColorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.textBackgroundColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBackgroundColorPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBackgroundColorPanel.Location = new System.Drawing.Point(21, 96);
-            this.textBackgroundColorPanel.Name = "textBackgroundColorPanel";
-            this.textBackgroundColorPanel.Size = new System.Drawing.Size(35, 25);
-            this.textBackgroundColorPanel.TabIndex = 12;
-            // 
-            // textBackgroundColorTextBox
-            // 
-            this.textBackgroundColorTextBox.Location = new System.Drawing.Point(62, 96);
-            this.textBackgroundColorTextBox.Multiline = true;
-            this.textBackgroundColorTextBox.Name = "textBackgroundColorTextBox";
-            this.textBackgroundColorTextBox.ReadOnly = true;
-            this.textBackgroundColorTextBox.Size = new System.Drawing.Size(66, 25);
-            this.textBackgroundColorTextBox.TabIndex = 13;
             // 
             // textColorButton
             // 
@@ -1577,11 +1588,11 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.backgroundPictureBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(786, 582);
+            this.tabPage2.Size = new System.Drawing.Size(786, 628);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Background";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1596,7 +1607,7 @@
             this.groupBox2.Controls.Add(this.backgroundImagePathTextBox);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.backgroundImageLayout);
-            this.groupBox2.Location = new System.Drawing.Point(6, 312);
+            this.groupBox2.Location = new System.Drawing.Point(6, 412);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(774, 210);
             this.groupBox2.TabIndex = 2;
@@ -1617,12 +1628,15 @@
             // animatedBackgroundCheck
             // 
             this.animatedBackgroundCheck.AutoSize = true;
+            this.animatedBackgroundCheck.Checked = true;
+            this.animatedBackgroundCheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.animatedBackgroundCheck.Location = new System.Drawing.Point(282, 113);
             this.animatedBackgroundCheck.Name = "animatedBackgroundCheck";
             this.animatedBackgroundCheck.Size = new System.Drawing.Size(146, 19);
             this.animatedBackgroundCheck.TabIndex = 7;
             this.animatedBackgroundCheck.Text = "Animated background";
             this.animatedBackgroundCheck.UseVisualStyleBackColor = true;
+            this.animatedBackgroundCheck.CheckedChanged += new System.EventHandler(this.animatedBackgroundCheck_CheckedChanged);
             // 
             // defaultBackgroundImageButton
             // 
@@ -1632,6 +1646,7 @@
             this.defaultBackgroundImageButton.TabIndex = 6;
             this.defaultBackgroundImageButton.Text = "Default";
             this.defaultBackgroundImageButton.UseVisualStyleBackColor = true;
+            this.defaultBackgroundImageButton.Click += new System.EventHandler(this.defaultBackgroundImageButton_Click);
             // 
             // browseBackgroundimage
             // 
@@ -1641,6 +1656,7 @@
             this.browseBackgroundimage.TabIndex = 5;
             this.browseBackgroundimage.Text = "Browse...";
             this.browseBackgroundimage.UseVisualStyleBackColor = true;
+            this.browseBackgroundimage.Click += new System.EventHandler(this.browseBackgroundimage_Click);
             // 
             // label4
             // 
@@ -1656,6 +1672,7 @@
             this.backgroundImagePathTextBox.Location = new System.Drawing.Point(21, 113);
             this.backgroundImagePathTextBox.Multiline = true;
             this.backgroundImagePathTextBox.Name = "backgroundImagePathTextBox";
+            this.backgroundImagePathTextBox.ReadOnly = true;
             this.backgroundImagePathTextBox.Size = new System.Drawing.Size(162, 25);
             this.backgroundImagePathTextBox.TabIndex = 4;
             // 
@@ -1682,22 +1699,23 @@
             this.backgroundImageLayout.Size = new System.Drawing.Size(121, 23);
             this.backgroundImageLayout.TabIndex = 1;
             this.backgroundImageLayout.Text = "None";
+            this.backgroundImageLayout.SelectedIndexChanged += new System.EventHandler(this.backgroundImageLayout_SelectedIndexChanged);
             // 
-            // pictureBox1
+            // backgroundPictureBox
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(93, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 300);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.backgroundPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backgroundPictureBox.BackgroundImage")));
+            this.backgroundPictureBox.Location = new System.Drawing.Point(43, 6);
+            this.backgroundPictureBox.Name = "backgroundPictureBox";
+            this.backgroundPictureBox.Size = new System.Drawing.Size(700, 400);
+            this.backgroundPictureBox.TabIndex = 0;
+            this.backgroundPictureBox.TabStop = false;
             // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(786, 582);
+            this.tabPage3.Size = new System.Drawing.Size(786, 628);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Icons set";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1709,22 +1727,17 @@
             this.loadDefault.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(176)))), ((int)(((byte)(225)))));
             this.loadDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadDefault.ForeColor = System.Drawing.Color.White;
-            this.loadDefault.Location = new System.Drawing.Point(537, 624);
+            this.loadDefault.Location = new System.Drawing.Point(541, 670);
             this.loadDefault.Name = "loadDefault";
             this.loadDefault.Size = new System.Drawing.Size(126, 27);
             this.loadDefault.TabIndex = 5;
             this.loadDefault.Text = "Load default";
             this.loadDefault.UseVisualStyleBackColor = false;
             // 
-            // label34
+            // openFileDialog1
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(23, 155);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(169, 14);
-            this.label34.TabIndex = 68;
-            this.label34.Text = "Currently unavailable. Sorry :(";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // volumeSliderPreview
             // 
@@ -1856,7 +1869,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(805, 656);
+            this.ClientSize = new System.Drawing.Size(805, 702);
             this.Controls.Add(this.loadDefault);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.saveChanges);
@@ -1882,7 +1895,7 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backgroundPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1908,7 +1921,7 @@
         private System.Windows.Forms.TextBox backgroundImagePathTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox backgroundImageLayout;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox backgroundPictureBox;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox animatedBackgroundCheck;
@@ -2022,10 +2035,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label textPreview;
-        private System.Windows.Forms.Button textBackgroundColorButton;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Panel textBackgroundColorPanel;
-        private System.Windows.Forms.TextBox textBackgroundColorTextBox;
         private System.Windows.Forms.Button textColorButton;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Panel textColorPanel;
@@ -2036,5 +2045,10 @@
         private System.Windows.Forms.Button loadDefault;
         private System.Windows.Forms.TrackBar fontSizeTrackBar;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button shuffleRepeatBorderColorButton;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Panel shuffleRepeatBorderColorPanel;
+        private System.Windows.Forms.TextBox shuffleRepeatBorderColorTextBox;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

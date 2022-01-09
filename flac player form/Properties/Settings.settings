@@ -5,9 +5,6 @@
     <Setting Name="ui_textColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Black</Value>
     </Setting>
-    <Setting Name="ui_textBackgroundColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">25, 25, 25</Value>
-    </Setting>
     <Setting Name="ui_primaryColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">91, 176, 225</Value>
     </Setting>
@@ -88,6 +85,18 @@
     </Setting>
     <Setting Name="volumeSlider_thumbPenColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">63, 103, 199</Value>
+    </Setting>
+    <Setting Name="controls_shuffleRepeatBorderColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="background_file" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="background_layout" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="background_animated" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace flac_player_form
 {
     public partial class themeEditor : Form
     {
+        //Preview variables
+        bool shuffle = false;
+        bool repeat = false;
         //UI settings
         Color ui_textColor;
         Color ui_textBackgroundColor;
@@ -25,6 +23,7 @@ namespace flac_player_form
         Color controls_nextBackColor;
         Color controls_repeatBackColor;
         Color controls_shuffleBackColor;
+        Color controls_shuffleRepeatBorderColor;
         //Track slider settings
         Color trackSlider_elapsedInnerColor;
         Color trackSlider_elapsedPenColorTop;
@@ -45,9 +44,17 @@ namespace flac_player_form
         Color volumeSlider_thumbInnerColor;
         Color volumeSlider_thumbOuterColor;
         Color volumeSlider_thumbPenColor;
+        //Background settings
+        string background_layout;
+        string background_file;
+        bool background_animated;
         public themeEditor()
         {
             InitializeComponent();
+        }
+        string RGBBtoHEX(Color RGBcolor)
+        {
+            return "#" + RGBcolor.R.ToString("X2") + RGBcolor.G.ToString("X2") + RGBcolor.B.ToString("X2");
         }
         private Font selectFont()
         {
@@ -72,7 +79,7 @@ namespace flac_player_form
             {
                 selectedColor = colorPicker.Color;
             }
-                return selectedColor;
+            return selectedColor;
         }
 
         private void themeEditor_Load(object sender, EventArgs e)
@@ -83,30 +90,60 @@ namespace flac_player_form
             //##Update variables##
             //UI settings
             ui_textColor = Properties.Settings.Default.ui_textColor;
-            ui_textBackgroundColor = Properties.Settings.Default.ui_textBackgroundColor;
             ui_primaryColor = Properties.Settings.Default.ui_primaryColor;
             ui_backgroundColor = Properties.Settings.Default.ui_backgroundColor;
             //ui_textSize;
             ui_textFont = Properties.Settings.Default.ui_textFont;
+            //Controls settings
+            controls_nextBackColor = Properties.Settings.Default.controls_nextBackColor;
+            controls_previousBackColor = Properties.Settings.Default.controls_previousBackColor;
+            controls_playPauseBackColor = Properties.Settings.Default.controls_playPauseBackColor;
+            controls_repeatBackColor = Properties.Settings.Default.controls_repeatBackColor;
+            controls_shuffleBackColor = Properties.Settings.Default.controls_shuffleBackColor;
+            controls_shuffleRepeatBorderColor = Properties.Settings.Default.controls_shuffleRepeatBorderColor;
+
 
             //Update interface & previews according to settings
             //UI Panels
             textColorPanel.BackColor = Properties.Settings.Default.ui_textColor;
-            textBackgroundColorPanel.BackColor = Properties.Settings.Default.ui_textBackgroundColor;
             primaryColorPanel.BackColor = Properties.Settings.Default.ui_primaryColor;
             backgroundColorPanel.BackColor = Properties.Settings.Default.ui_backgroundColor;
             //UI textboxes
-            textColorTextBox.Text = "#" + Properties.Settings.Default.ui_textColor.R.ToString("X2") + Properties.Settings.Default.ui_textColor.G.ToString("X2") + Properties.Settings.Default.ui_textColor.B.ToString("X2");
-            textBackgroundColorTextBox.Text = "#" + Properties.Settings.Default.ui_textBackgroundColor.R.ToString("X2") + Properties.Settings.Default.ui_textBackgroundColor.G.ToString("X2") + Properties.Settings.Default.ui_textBackgroundColor.B.ToString("X2");
-            primaryColorTextBox.Text = "#" + Properties.Settings.Default.ui_primaryColor.R.ToString("X2") + Properties.Settings.Default.ui_primaryColor.G.ToString("X2") + Properties.Settings.Default.ui_primaryColor.B.ToString("X2");
-            backgroundColorTextBox.Text = "#" + Properties.Settings.Default.ui_backgroundColor.R.ToString("X2") + Properties.Settings.Default.ui_backgroundColor.G.ToString("X2") + Properties.Settings.Default.ui_backgroundColor.B.ToString("X2");
+            textColorTextBox.Text = RGBBtoHEX(Properties.Settings.Default.ui_textColor);
+            primaryColorTextBox.Text = RGBBtoHEX(Properties.Settings.Default.ui_primaryColor);
+            backgroundColorTextBox.Text = RGBBtoHEX(Properties.Settings.Default.ui_backgroundColor);
             //fontSizeTrackBar.Value = Properties.Settings.Default.ui_textSize;
+            //Controls panels
+            nextBackColorPanel.BackColor = Properties.Settings.Default.controls_nextBackColor;
+            previousBackColorPanel.BackColor = Properties.Settings.Default.controls_previousBackColor;
+            playPauseBackColorPanel.BackColor = Properties.Settings.Default.controls_playPauseBackColor;
+            repeatBackColorPanel.BackColor = Properties.Settings.Default.controls_repeatBackColor;
+            shuffleBackColorPanel.BackColor = Properties.Settings.Default.controls_shuffleBackColor;
+            shuffleRepeatBorderColorPanel.BackColor = Properties.Settings.Default.controls_shuffleRepeatBorderColor;
+            //Controls textboxes
+            nextBackColorTextBox.Text = RGBBtoHEX(Properties.Settings.Default.controls_nextBackColor);
+            previousBackColorTextBox.Text = RGBBtoHEX(Properties.Settings.Default.controls_previousBackColor);
+            playPauseBackColorTextBox.Text = RGBBtoHEX(Properties.Settings.Default.controls_playPauseBackColor);
+            repeatBackColorTextBox.Text = RGBBtoHEX(Properties.Settings.Default.controls_repeatBackColor);
+            shuffleBackColorTextBox.Text = RGBBtoHEX(Properties.Settings.Default.controls_shuffleBackColor);
+            shuffleRepeatBorderColorTextBox.Text = RGBBtoHEX(Properties.Settings.Default.controls_shuffleRepeatBorderColor);
 
             //Load previews
             //UI Text preview
             textPreview.Font = Properties.Settings.Default.ui_textFont;
             textPreview.ForeColor = Properties.Settings.Default.ui_textColor;
-            textPreview.BackColor = Properties.Settings.Default.ui_textBackgroundColor;
+            textPreview.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            controlsBackgroundPanelPreview.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            //Controls preview
+            controlsBackgroundPanelPreview.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            playButton.BackColor = Properties.Settings.Default.controls_playPauseBackColor;
+            previousTrack.BackColor = Properties.Settings.Default.controls_previousBackColor;
+            nextTrack.BackColor = Properties.Settings.Default.controls_nextBackColor;
+            shuffleButton.BackColor = Properties.Settings.Default.controls_shuffleBackColor;
+            repeatButton.BackColor = Properties.Settings.Default.controls_repeatBackColor;
+            shuffleButton.FlatAppearance.BorderColor = Properties.Settings.Default.controls_shuffleRepeatBorderColor;
+            repeatButton.FlatAppearance.BorderColor = Properties.Settings.Default.controls_shuffleRepeatBorderColor;
+
         }
         private void textColorButton_Click(object sender, EventArgs e)
         {
@@ -119,9 +156,9 @@ namespace flac_player_form
             {
                 ui_textColor = color;
                 textColorPanel.BackColor = color;
+                textColorTextBox.Text = RGBBtoHEX(color);
+                textPreview.ForeColor = color;
             }
-            textColorTextBox.Text = "#" + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2");
-            textPreview.ForeColor = color;
         }
 
         private void primaryColorBackground_Click(object sender, EventArgs e)
@@ -135,24 +172,8 @@ namespace flac_player_form
             {
                 ui_primaryColor = color;
                 primaryColorPanel.BackColor = color;
+                primaryColorTextBox.Text = RGBBtoHEX(color);
             }
-            primaryColorTextBox.Text = "#" + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2");
-        }
-
-        private void textBackgroundColorButton_Click(object sender, EventArgs e)
-        {
-            Color color = selectColor();
-            if (color == Color.Empty)
-            {
-                color = Color.Black;
-            }
-            else
-            {
-                ui_textBackgroundColor = color;
-                textBackgroundColorPanel.BackColor = color;
-                textPreview.BackColor = color;
-            }
-            textBackgroundColorTextBox.Text = "#" + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2");
         }
 
         private void backgroundColorButton_Click(object sender, EventArgs e)
@@ -166,8 +187,9 @@ namespace flac_player_form
             {
                 ui_backgroundColor = color;
                 backgroundColorPanel.BackColor = color;
+                backgroundColorTextBox.Text = RGBBtoHEX(color);
+                controlsBackgroundPanelPreview.BackColor = color;
             }
-            backgroundColorTextBox.Text = "#" + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2");
         }
 
         private void fontSizeTrackBar_ValueChanged(object sender, EventArgs e)
@@ -198,17 +220,223 @@ namespace flac_player_form
 
         private void saveChanges_Click(object sender, EventArgs e)
         {
-            //set UI Settings
+            //Set UI Settings
             Properties.Settings.Default.ui_textColor = ui_textColor;
-            Properties.Settings.Default.ui_textBackgroundColor = ui_textBackgroundColor;
             Properties.Settings.Default.ui_primaryColor = ui_primaryColor;
             Properties.Settings.Default.ui_backgroundColor = ui_backgroundColor;
             Properties.Settings.Default.ui_textSize = ui_textSize;
             Properties.Settings.Default.ui_textFont = ui_textFont;
-            //Save
+            //Set Controls Settings
+            Properties.Settings.Default.controls_shuffleRepeatBorderColor = controls_shuffleRepeatBorderColor;
+            Properties.Settings.Default.controls_playPauseBackColor = controls_playPauseBackColor;
+            Properties.Settings.Default.controls_nextBackColor = controls_nextBackColor;
+            Properties.Settings.Default.controls_previousBackColor = controls_previousBackColor;
+            Properties.Settings.Default.controls_shuffleBackColor = controls_shuffleBackColor;
+            Properties.Settings.Default.controls_repeatBackColor = controls_repeatBackColor;
+            //Save & close
             Properties.Settings.Default.Save();
-            themeEditor themeEditor = new themeEditor();
-            themeEditor.Close();
+            this.Close();
+        }
+
+        private void playPauseBackColorButton_Click(object sender, EventArgs e)
+        {
+            Color color = selectColor();
+            if (color == Color.Empty)
+            {
+                color = Color.FromArgb(25, 25, 25);
+            }
+            else
+            {
+                controls_playPauseBackColor = color;
+                playPauseBackColorPanel.BackColor = color;
+                playPauseBackColorTextBox.Text = RGBBtoHEX(color);
+                playButton.BackColor = color;
+            }
+        }
+
+        private void nextBackColorButton_Click(object sender, EventArgs e)
+        {
+            Color color = selectColor();
+            if (color == Color.Empty)
+            {
+                color = Color.FromArgb(25, 25, 25);
+            }
+            else
+            {
+                controls_nextBackColor = color;
+                nextBackColorPanel.BackColor = color;
+                nextBackColorTextBox.Text = RGBBtoHEX(color);
+                nextTrack.BackColor = color;
+            }
+        }
+
+        private void previousBackColorButton_Click(object sender, EventArgs e)
+        {
+            Color color = selectColor();
+            if (color == Color.Empty)
+            {
+                color = Color.FromArgb(25, 25, 25);
+            }
+            else
+            {
+                controls_previousBackColor = color;
+                previousBackColorPanel.BackColor = color;
+                previousBackColorTextBox.Text = RGBBtoHEX(color);
+                previousTrack.BackColor = color;
+            }
+        }
+
+        private void shuffleBackColorButton_Click(object sender, EventArgs e)
+        {
+            Color color = selectColor();
+            if (color == Color.Empty)
+            {
+                color = Color.FromArgb(25, 25, 25);
+            }
+            else
+            {
+                controls_shuffleBackColor = color;
+                shuffleBackColorPanel.BackColor = color;
+                shuffleBackColorTextBox.Text = RGBBtoHEX(color);
+                shuffleButton.BackColor = color;
+            }
+        }
+
+        private void repeatBackColorButton_Click(object sender, EventArgs e)
+        {
+            Color color = selectColor();
+            if (color == Color.Empty)
+            {
+                color = Color.FromArgb(25, 25, 25);
+            }
+            else
+            {
+                controls_repeatBackColor = color;
+                repeatBackColorPanel.BackColor = color;
+                repeatBackColorTextBox.Text = RGBBtoHEX(color);
+                repeatButton.BackColor = color;
+            }
+        }
+
+        private void shuffleRepeatBorderColorButton_Click(object sender, EventArgs e)
+        {
+            Color color = selectColor();
+            if (color == Color.Empty)
+            {
+                color = Color.FromArgb(25, 25, 25);
+            }
+            else
+            {
+                controls_shuffleRepeatBorderColor = color;
+                shuffleRepeatBorderColorPanel.BackColor = color;
+                shuffleRepeatBorderColorTextBox.Text = RGBBtoHEX(color);
+                shuffleButton.FlatAppearance.BorderColor = color;
+                repeatButton.FlatAppearance.BorderColor = color;
+            }
+        }
+
+        private void shuffleButton_Click(object sender, EventArgs e)
+        {
+            if (shuffle == false)
+            {
+                shuffle = true;
+                shuffleButton.FlatAppearance.BorderColor = controls_shuffleRepeatBorderColor;
+            }
+            else
+            {
+                shuffle = false;
+                shuffleButton.FlatAppearance.BorderColor = ui_backgroundColor;
+            }
+        }
+
+        private void repeatButton_Click(object sender, EventArgs e)
+        {
+            if (repeat == false)
+            {
+                repeat = true;
+                repeatButton.FlatAppearance.BorderColor = controls_shuffleRepeatBorderColor;
+            }
+            else
+            {
+                repeat = false;
+                repeatButton.FlatAppearance.BorderColor = ui_backgroundColor;
+            }
+        }
+
+        private void animatedBackgroundCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (animatedBackgroundCheck.Checked == true)
+            {
+                background_animated = true;
+            }
+            else
+            {
+                background_animated = false;
+            }
+        }
+
+        private void browseBackgroundimage_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            background_file = openFileDialog1.FileName;
+            try
+            {
+                File.Copy(background_file, @"assets\" + Path.GetFileName(background_file));
+                backgroundImagePathTextBox.Text = openFileDialog1.FileName;
+                if (background_animated == false)
+                {
+                    backgroundPictureBox.Image = Image.FromFile(@"assets\" + Path.GetFileName(background_file));
+                }
+                else
+                {
+                    backgroundPictureBox.BackgroundImage = Image.FromFile(@"assets\" + Path.GetFileName(background_file));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Couldn't choose this background: " + ex.Message);
+            }
+        }
+
+        private void defaultBackgroundImageButton_Click(object sender, EventArgs e)
+        {
+            background_file = @"assets\background.gif";
+            background_animated = true;
+            backgroundPictureBox.BackgroundImage = Image.FromFile(@"assets\" + Path.GetFileName(background_file));
+            background_layout = "tile";
+            backgroundPictureBox.BackgroundImageLayout = ImageLayout.Tile;
+        }
+
+        private void backgroundImageLayout_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (backgroundImageLayout.SelectedItem)
+            {
+                case "None":
+                    background_layout = "none";
+                    backgroundPictureBox.BackgroundImageLayout = ImageLayout.None;
+                    break;
+                case "Tile":
+                    background_layout = "tile";
+                    backgroundPictureBox.BackgroundImageLayout = ImageLayout.Tile;
+                    break;
+                case "Center":
+                    background_layout = "center";
+                    backgroundPictureBox.BackgroundImageLayout = ImageLayout.Center;
+                    break;
+                case "Stretch":
+                    background_layout = "stretch";
+                    backgroundPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+                    break;
+                case "Zoom":
+                    background_layout = "zoom";
+                    backgroundPictureBox.BackgroundImageLayout = ImageLayout.Zoom;
+                    break;
+            }
+            
         }
     }
 }

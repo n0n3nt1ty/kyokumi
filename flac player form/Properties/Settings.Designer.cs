@@ -37,18 +37,6 @@ namespace flac_player_form.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("25, 25, 25")]
-        public global::System.Drawing.Color ui_textBackgroundColor {
-            get {
-                return ((global::System.Drawing.Color)(this["ui_textBackgroundColor"]));
-            }
-            set {
-                this["ui_textBackgroundColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("91, 176, 225")]
         public global::System.Drawing.Color ui_primaryColor {
             get {
@@ -368,6 +356,54 @@ namespace flac_player_form.Properties {
             }
             set {
                 this["volumeSlider_thumbPenColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color controls_shuffleRepeatBorderColor {
+            get {
+                return ((global::System.Drawing.Color)(this["controls_shuffleRepeatBorderColor"]));
+            }
+            set {
+                this["controls_shuffleRepeatBorderColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string background_file {
+            get {
+                return ((string)(this["background_file"]));
+            }
+            set {
+                this["background_file"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string background_layout {
+            get {
+                return ((string)(this["background_layout"]));
+            }
+            set {
+                this["background_layout"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool background_animated {
+            get {
+                return ((bool)(this["background_animated"]));
+            }
+            set {
+                this["background_animated"] = value;
             }
         }
     }

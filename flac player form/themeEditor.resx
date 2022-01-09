@@ -160,7 +160,7 @@
         gA4YGAC65GYYXdCZ7wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="backgroundPictureBox.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhsARYAvdBAAAoOFGe0COClmmPvwAqRGTA2FGs2FGp1lGm1GK54GWu22/I1lGy3E2VyQ1BZ2TC
         2lG03AAiKk6q1U6s1lG43xJHa1Gj03aezE2QxpOlziZvrRZbfW3D23acy1GbznXG1lGw21G94YKPvGS8
@@ -2171,5 +2171,8 @@
   </metadata>
   <metadata name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>138, 17</value>
+  </metadata>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>254, 17</value>
   </metadata>
 </root>

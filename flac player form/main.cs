@@ -1,4 +1,11 @@
-﻿using LibVLCSharp.Shared;
+﻿/**
+ * Original author:     purplerain
+ * Created:             30.12.2021
+ * Version:             0.2 ALPHA
+ * 
+ * (c) Copyright by purplerain.
+ **/
+using LibVLCSharp.Shared;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -27,7 +34,53 @@ namespace flac_player_form
         }
         private void updateTheme()
         {
-
+            //Control panel
+            tableLayoutPanel1.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            menuStrip1.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            //Panels
+            playlistPanel.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            trackInfo.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            albumCover.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            playlistList.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            //Buttons
+            trackInfoMenu.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            playlistMenu.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            toggleAlbumCover.BackColor = Properties.Settings.Default.ui_backgroundColor;
+            //Controls
+            playButton.BackColor = Properties.Settings.Default.controls_playPauseBackColor;
+            previousTrack.BackColor = Properties.Settings.Default.controls_previousBackColor;
+            nextTrack.BackColor = Properties.Settings.Default.controls_nextBackColor;
+            shuffleButton.BackColor = Properties.Settings.Default.controls_shuffleBackColor;
+            repeatButton.BackColor = Properties.Settings.Default.controls_repeatBackColor;
+            //Shuffle & repeat (set the border color to the background color)
+            shuffleButton.FlatAppearance.BorderColor = Properties.Settings.Default.ui_backgroundColor;
+            repeatButton.FlatAppearance.BorderColor = Properties.Settings.Default.ui_backgroundColor;
+            //##Text color & font##
+            Font defaultTextFontRegular = new Font(Properties.Settings.Default.ui_textFont.FontFamily.Name, 12, GraphicsUnit.Point);
+            Font defaultTextFontBold = new Font(Properties.Settings.Default.ui_textFont.FontFamily.Name, 12, FontStyle.Bold);
+            Font smallTextFontRegular = new Font(Properties.Settings.Default.ui_textFont.FontFamily.Name, 9, GraphicsUnit.Point);
+            Font xsmallTextFontRegular = new Font(Properties.Settings.Default.ui_textFont.FontFamily.Name, 8, GraphicsUnit.Point);
+            Font smallTextFontBold = new Font(Properties.Settings.Default.ui_textFont.FontFamily.Name, 9, FontStyle.Bold);
+            //Font
+            loadedPlaylist.Font = defaultTextFontRegular;
+            nowPlaying.Font = defaultTextFontBold;
+            trackName.Font = defaultTextFontRegular;
+            artistLabel.Font = smallTextFontBold;
+            titleLabel.Font = smallTextFontBold;
+            albumLabel.Font = smallTextFontBold;
+            yearLabel.Font = smallTextFontBold;
+            lengthLabel.Font = smallTextFontBold;
+            bitrateLabel.Font = smallTextFontBold;
+            artistValue.Font = smallTextFontRegular;
+            titleValue.Font = smallTextFontRegular;
+            albumValue.Font = smallTextFontRegular;
+            yearValue.Font = smallTextFontRegular;
+            bitrateValue.Font = smallTextFontRegular;
+            lengthValue.Font = smallTextFontRegular;
+            durationNow.Font = xsmallTextFontRegular;
+            durationTotal.Font = xsmallTextFontRegular;
+            //Font color
+            ForeColor = Properties.Settings.Default.ui_textColor;
         }
         private void getAttributes()
         {
@@ -36,9 +89,9 @@ namespace flac_player_form
             var file = TagLib.File.Create(playlist[currentTrack]);
             string title = file.Tag.Title;
             string album = file.Tag.Album;
-            string year = "";
-            string artist = "";
-            string seconds_display = "";
+            string year;
+            string artist;
+            string seconds_display;
             //Add 0 to seconds if less than 10
             if (file.Properties.Duration.Seconds <= 9)
             {
@@ -204,6 +257,7 @@ namespace flac_player_form
                     int nextTrack = rndTrack.Next(0, playlist.Count);
                     while (nextTrack == currentTrack)
                     {
+                        if (playlist.Count == 1) break;
                         nextTrack = rndTrack.Next(0, playlist.Count);
                     }
                     currentTrack = nextTrack;
@@ -234,6 +288,8 @@ namespace flac_player_form
             libVLC = new LibVLC();
             mp = new MediaPlayer(libVLC);
             backgroundCredits.BackColor = System.Drawing.Color.Transparent;
+            //Update theme
+            updateTheme();
             //Menu alignment
             trackInfoMenu.Location = new System.Drawing.Point(0, 590);
             playlistMenu.Location = new System.Drawing.Point(0, 555);
@@ -372,6 +428,7 @@ namespace flac_player_form
                 int nextTrack = rndTrack.Next(0, playlist.Count);
                 while (nextTrack == currentTrack)
                 {
+                    if (playlist.Count == 1) break;
                     nextTrack = rndTrack.Next(0, playlist.Count);
                 }
                 currentTrack = nextTrack;
@@ -412,12 +469,12 @@ namespace flac_player_form
             if (shuffle == false)
             {
                 shuffle = true;
-                shuffleButton.FlatAppearance.BorderColor = Color.White;
+                shuffleButton.FlatAppearance.BorderColor = Properties.Settings.Default.controls_shuffleRepeatBorderColor;
             }
             else
             {
                 shuffle = false;
-                shuffleButton.FlatAppearance.BorderColor = Color.FromArgb(32, 33, 36);
+                shuffleButton.FlatAppearance.BorderColor = Properties.Settings.Default.ui_backgroundColor;
             }
         }
 
@@ -426,12 +483,12 @@ namespace flac_player_form
             if (repeat == false)
             {
                 repeat = true;
-                repeatButton.FlatAppearance.BorderColor = Color.White;
+                repeatButton.FlatAppearance.BorderColor = Properties.Settings.Default.controls_shuffleRepeatBorderColor;
             }
             else
             {
                 repeat = false;
-                repeatButton.FlatAppearance.BorderColor = Color.FromArgb(32, 33, 36);
+                repeatButton.FlatAppearance.BorderColor = Properties.Settings.Default.ui_backgroundColor;
             }
         }
 
@@ -555,6 +612,17 @@ namespace flac_player_form
             themeEditor themePage = new themeEditor();
             themePage.TopLevel = true;
             themePage.ShowDialog();
+            updateTheme();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void volumeSlider_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
     }
 }
