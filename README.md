@@ -1,7 +1,7 @@
 # Magnificent audio, as well as visuals
-UNNAMED is a music player that user can customize to a large extent. Audio library used in the project comes from VLC, this way UNNAMED supports all music formats and provides a high quality playback.
+Kyokumi is a music player that user can customize to a large extent. Audio library used in the project comes from VLC, this way Kyukomi supports all music formats and provides a high quality playback.
 
-**Note: UNNAMED is still in an early development stage. New features are being added, while the core features are ready.**
+**Note: Kyokumi is still in an early development stage. New features are being added, while the core features are ready.**
 
 # Features
 - Audio hardware decoding (by VLC).
